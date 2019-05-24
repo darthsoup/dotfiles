@@ -1,0 +1,61 @@
+[user]
+	name = Kevin Krummnacker
+	email = kevin.krummnacker@gmail.com
+
+[alias]
+	# clone all with submodules
+	c = clone --recursive
+
+	# commit all
+	ca = !git add -A && git commit -av
+
+	# one line logs
+	l = log --pretty=oneline -n 20 --graph --abbrev-commit
+
+	# use with caution - overrides the repository
+	forcewithlease = push --force-with-lease
+
+	# commit statistics
+	who = shortlog -sne
+
+	# deletes all merges branches from local (dont work with squshed branches)
+	deletemerged = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+
+	# amend commit shortcur
+	amend = commit --amend --reuse-message=HEAD
+
+	# show all tags
+	tags = tag -l
+	
+	# show all branches
+	branches = branch -a
+
+	# show all remotes
+	remotes = remote -vi
+
+	# show all branches which are not remote yet
+	unpushedbranches = log --branches --not --remotes --no-walk --decorate --oneline
+
+[core]
+	editor = vim
+	excludesfile = ~/.gitignore
+	attributesfile = ~/.gitattributes
+	untrackedCache = true
+
+[help]
+	autocorrect = 0
+
+[merge]
+	log = true
+
+[push]
+	default = simple
+	followTags = true
+
+[url "git@github.com:"]
+	insteadOf = "gh:"
+	pushInsteadOf = "github:"
+	pushInsteadOf = "git://github.com/"
+
+[url "git://github.com/"]
+	insteadOf = "github:"
