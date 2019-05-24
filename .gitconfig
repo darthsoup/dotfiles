@@ -3,6 +3,9 @@
 	email = kevin.krummnacker@gmail.com
 
 [alias]
+	# shortline status
+	s = status -s
+
 	# clone all with submodules
 	c = clone --recursive
 
@@ -21,7 +24,7 @@
 	# deletes all merges branches from local (dont work with squshed branches)
 	deletemerged = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
 
-	# amend commit shortcur
+	# amend commit shortcut
 	amend = commit --amend --reuse-message=HEAD
 
 	# show all tags

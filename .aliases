@@ -1,10 +1,16 @@
 #!/usr/bin/env bash
 
+# changedirectory shortcuts
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
+# listing
 alias l="ls -CF"
 alias la="ls -A"
 alias ll="ls -alF"
+
+# config
+alias sshconf='vim ~/.ssh/config'
+alias vimrc='vim ~/.vimrc'
