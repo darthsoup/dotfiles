@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+# Unix
+alias mkdir="mkdir -p"
+alias mv='mv -v'
+alias rm='rm -i -v'
+alias cp='cp -v'
+
 # changedirectory shortcuts
 alias ..="cd .."
 alias ...="cd ../.."
@@ -14,3 +20,4 @@ alias ll="ls -alF"
 # config
 alias sshconf='vim ~/.ssh/config'
 alias vimrc='vim ~/.vimrc'
+alias hosts='sudo $EDITOR /etc/hosts'
