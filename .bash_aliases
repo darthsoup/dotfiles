@@ -21,3 +21,7 @@ alias ll="ls -alF"
 alias sshconf='vim ~/.ssh/config'
 alias vimrc='vim ~/.vimrc'
 alias hosts='sudo $EDITOR /etc/hosts'
+
+# network
+alias localip-wired="ipconfig getifaddr en1"
+alias localip-wireless="ipconfig getifaddr ap1"

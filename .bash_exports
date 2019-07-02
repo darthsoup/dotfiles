@@ -1,0 +1,11 @@
+#!/bin/bash
+
+export EDITOR="code"
+export BROWSER="chrome"
+
+
+# configs
+
+## only persist 1000 lines in shell history
+export HISTFILESIZE=1000
+export HISTIGNORE="clear:exit:history:pwd"

@@ -1,17 +1,21 @@
+export PATH="$HOME/bin:$PATH";
+
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
-for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
-	[ -r "$file" ] && [ -f "$file" ] && source "$file";
+for file in ~/.{path,bash_prompt,bash_exports,bash_aliases}; do
+    [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file
 
+shopt -s checkwinsize
 shopt -s nocaseglob;
 shopt -s histappend;
 shopt -s cdspell;
+shopt -s no_empty_cmd_completion
 
 for option in autocd dirspell globstar; do
-	shopt -s "$option" 2> /dev/null;
+    shopt -s "$option" 2> /dev/null;
 done;
 
 # Add tab completion for many Bash commands
