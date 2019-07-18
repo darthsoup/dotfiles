@@ -3,7 +3,7 @@
 # Unix
 alias mkdir="mkdir -p"
 alias mv='mv -v'
-alias rm='rm -i -v'
+alias rm='rm -i'
 alias cp='cp -v'
 
 # changedirectory shortcuts
