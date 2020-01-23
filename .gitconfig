@@ -1,5 +1,4 @@
 [alias]
-
     # clone all with submodules
     c = clone --recursive
 
@@ -38,6 +37,9 @@
 
     # show all branches which are not remote yet
     unpushedbranches = log --branches --not --remotes --no-walk --decorate --oneline
+
+    # shitshit
+    shitshit = git reset --hard
 
 [color]
 	ui = auto
