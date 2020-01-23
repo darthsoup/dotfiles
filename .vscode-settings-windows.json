@@ -1,0 +1,28 @@
+{
+    "telemetry.enableTelemetry": false,
+    "terminal.integrated.shell.windows": "C:\\Windows\\System32\\cmd.exe",
+    "files.autoSave": "onFocusChange",
+    "explorer.confirmDelete": false,
+    "workbench.colorTheme": "One Dark Pro",
+    "workbench.iconTheme": "vscode-icons",
+    "git.autofetch": true,
+    "extensions.autoUpdate": false,
+    "workbench.enableExperiments": false,
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.editor.enablePreview": false,
+    "eslint.alwaysShowStatus": true,
+    "eslint.packageManager": "yarn",
+    "editor.fontFamily": "Inconsolata, Consolas, 'Courier New', monospace",
+    "editor.minimap.enabled": false,
+    "editor.cursorBlinking": "blink",
+    "editor.formatOnSave": false,
+    "files.exclude": {
+        "**/node_modules": true
+    },
+    "editor.renderWhitespace": "all",
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "vue"
+    ]
+}
