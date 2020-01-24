@@ -3,9 +3,12 @@
 export EDITOR="code"
 export BROWSER="chrome"
 
-
 # configs
+
+## i like my internals in english
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
 
 ## only persist 1000 lines in shell history
 export HISTFILESIZE=1000
-export HISTIGNORE="clear:exit:history:pwd"
+export HISTIGNORE="ls:cd:clear:exit:history:pwd"
