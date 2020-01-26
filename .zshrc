@@ -15,6 +15,6 @@ export PATH="$HOME/.composer/vendor/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$PATH"
 
 # Load the shell dotfiles
-for file in ~/.zsh_{exports,aliases}; do
+for file in ~/zsh/{exports,aliases}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
