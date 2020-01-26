@@ -1,6 +1,7 @@
 #!/bin/bash
 
-export EDITOR="code"
+export DOTFILES="$HOME/.dotfiles"
+export EDITOR="vim"
 export BROWSER="chrome"
 
 # configs
@@ -9,6 +10,7 @@ export BROWSER="chrome"
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
-## only persist 1000 lines in shell history
-export HISTFILESIZE=1000
-export HISTIGNORE="ls:cd:clear:exit:history:pwd"
+## history
+HISTFILE=~/.zsh_history
+export HISTFILESIZE=5000
+export HISTIGNORE="ls:cd:clear:exit:history:pwd:date:* --help"
