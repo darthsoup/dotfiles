@@ -9,12 +9,7 @@ prompt adam1
 autoload -U compinit
 compinit -D
 
-# add Paths
-export PATH="$HOME/bin:$PATH";
-export PATH="$HOME/.composer/vendor/bin:$PATH"
-export PATH="$HOME/.yarn/bin:$PATH"
-
 # Load the shell dotfiles
-for file in ~/zsh/{exports,aliases}; do
+for file in ~/zsh/{config,exports,aliases}.zsh; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
