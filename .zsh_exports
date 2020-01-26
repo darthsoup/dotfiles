@@ -1,0 +1,16 @@
+#!/bin/bash
+
+export DOTFILES="$HOME/.dotfiles"
+export EDITOR="vim"
+export BROWSER="chrome"
+
+# configs
+
+## i like my internals in english
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+
+## history
+HISTFILE=~/.zsh_history
+export HISTFILESIZE=5000
+export HISTIGNORE="ls:cd:clear:exit:history:pwd:date:* --help"

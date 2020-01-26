@@ -1,0 +1,25 @@
+{
+    "telemetry.enableTelemetry": false,
+    "files.autoSave": "onFocusChange",
+    "explorer.confirmDelete": false,
+    "workbench.colorTheme": "One Dark Pro",
+    "workbench.iconTheme": "vscode-icons",
+    "git.autofetch": true,
+    "extensions.autoUpdate": false,
+    "workbench.enableExperiments": false,
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.editor.enablePreview": false,
+    "eslint.alwaysShowStatus": true,
+    "eslint.packageManager": "yarn",
+    "editor.minimap.enabled": false,
+    "editor.cursorBlinking": "blink",
+    "editor.formatOnSave": false,
+    "files.exclude": {
+        "**/node_modules": true
+    },
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "vue"
+    ]
+}

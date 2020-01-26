@@ -1,7 +1,9 @@
 [alias]
-
     # clone all with submodules
     c = clone --recursive
+
+    # clone with limited depth save some loading time
+    shallow-clone = "clone --depth=1"
 
     # commit all
     ca = !git add -A && git commit -av
@@ -36,7 +38,19 @@
     # show all branches which are not remote yet
     unpushedbranches = log --branches --not --remotes --no-walk --decorate --oneline
 
+    # shitshit
+    shitshit = git reset --hard
+
+[color]
+	ui = auto
+
+[color "status"]
+	added = green
+	changed = yellow
+	untracked = cyan
+
 [core]
+    autocrlf = input
     editor = vim
     excludesfile = ~/.gitignore
     attributesfile = ~/.gitattributes
