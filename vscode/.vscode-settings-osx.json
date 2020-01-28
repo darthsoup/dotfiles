@@ -1,25 +1,34 @@
 {
-    "telemetry.enableTelemetry": false,
-    "files.autoSave": "onFocusChange",
-    "explorer.confirmDelete": false,
-    "workbench.colorTheme": "One Dark Pro",
-    "workbench.iconTheme": "vscode-icons",
-    "git.autofetch": true,
-    "extensions.autoUpdate": false,
-    "workbench.enableExperiments": false,
-    "workbench.startupEditor": "newUntitledFile",
-    "workbench.editor.enablePreview": false,
+    "artisan.php.location": "/usr/local/bin/php",
+    "editor.acceptSuggestionOnEnter": "smart",
+    "editor.autoIndent": "brackets",
+    "editor.cursorBlinking": "blink",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": false,
+    "editor.minimap.enabled": false,
     "eslint.alwaysShowStatus": true,
     "eslint.packageManager": "yarn",
-    "editor.minimap.enabled": false,
-    "editor.cursorBlinking": "blink",
-    "editor.formatOnSave": false,
-    "files.exclude": {
-        "**/node_modules": true
-    },
     "eslint.validate": [
         "javascript",
         "javascriptreact",
         "vue"
-    ]
+    ],
+    "explorer.confirmDelete": false,
+    "extensions.autoUpdate": false,
+    "files.autoSave": "onFocusChange",
+    "files.exclude": {
+        "**/node_modules": true
+    },
+    "git.autofetch": true,
+    "intelephense.environment.phpVersion": "7.1.0",
+    "php.suggest.basic": false,
+    "php.validate.executablePath": "/usr/local/bin/php",
+    "search.showLineNumbers": true,
+    "telemetry.enableTelemetry": false,
+    "workbench.colorTheme": "One Dark Pro",
+    "workbench.editor.highlightModifiedTabs": true,
+    "workbench.editor.labelFormat": "short",
+    "workbench.enableExperiments": false,
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.startupEditor": "newUntitledFile"
 }
