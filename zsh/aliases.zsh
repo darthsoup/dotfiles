@@ -8,6 +8,7 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
+alias cd..="cd .." # fix my own mistake
 alias projects="cd $HOME/Projects"
 
 # listing
@@ -35,3 +36,9 @@ alias cfresh="rm -rf vendor/ composer.lock && composer i"
 # PHP Laravel
 alias a="php artisan"
 
+# Docker
+alias d='docker'
+alias dc='docker-compose'
+
+# update
+alias brewupdate="brew -v update; brew upgrade --force-bottle --cleanup; brew cleanup; brew cask cleanup;"
