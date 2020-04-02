@@ -21,7 +21,7 @@
     who = shortlog -sne
 
     # deletes all merges branches from local (dont work with squshed branches)
-    deletemerged = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+    # deletemerged = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
 
     # amend commit shortcut
     amend = commit --amend --reuse-message=HEAD
@@ -33,21 +33,21 @@
     branches = branch -a
 
     # show all remotes
-    remotes = remote -vi
+    remotes = remote -v
 
     # show all branches which are not remote yet
     unpushedbranches = log --branches --not --remotes --no-walk --decorate --oneline
 
     # shitshit
-    shitshit = git reset --hard
+    shitshit = reset --hard
 
 [color]
-	ui = auto
+    ui = auto
 
 [color "status"]
-	added = green
-	changed = yellow
-	untracked = cyan
+    added = green
+    changed = yellow
+    untracked = cyan
 
 [core]
     autocrlf = input
