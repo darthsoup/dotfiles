@@ -1,3 +1,5 @@
+.vim/plugged
+
 # local overwrites
 .gitconfig.local
 
