@@ -53,6 +53,9 @@ set shortmess+=I
 " End Settings
 
 " Plugin Settings
+    " fzf
+    nnoremap <C-p> :Files<CR>
+
     " Nerdtree
     autocmd StdinReadPre * let s:std_in=1
     autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
@@ -73,9 +76,14 @@ call plug#begin('~/.vim/plugged')
         Plug 'vim-airline/vim-airline-themes'
         Plug 'mhinz/vim-startify'
         Plug 'sheerun/vim-polyglot'
+        Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+        Plug 'junegunn/fzf.vim'
 
         " Themes
         Plug 'gf3/molotov'
+        Plug 'joshdick/onedark.vim'
+
+        " Others
         Plug 'preservim/nerdtree'
         Plug 'editorconfig/editorconfig-vim'
         Plug 'ciaranm/securemodelines'
