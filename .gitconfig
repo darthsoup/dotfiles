@@ -35,11 +35,17 @@
     # show all remotes
     remotes = remote -v
 
+    # show all stashes
+    stashes = stash list
+
     # show all branches which are not remote yet
     unpushedbranches = log --branches --not --remotes --no-walk --decorate --oneline
 
-    # shitshit
+    # redos all current changes
     shitshit = reset --hard
+
+    # uncommit all softly (goes back and keeps current changes)
+    uncommit = reset --soft HEAD^
 
 [color]
     ui = auto
@@ -48,6 +54,11 @@
     added = green
     changed = yellow
     untracked = cyan
+
+[color "branch"]
+    current = green reverse
+    local = yellow
+    remote = cyan
 
 [core]
     autocrlf = input
