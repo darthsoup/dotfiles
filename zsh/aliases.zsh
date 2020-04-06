@@ -1,6 +1,6 @@
 # dir/files stuff
 alias mkdir="mkdir -p"
-alias rm='rm -i'
+alias rm="rm -i"
 
 # changedirectory shortcuts
 alias ..="cd .."
@@ -16,10 +16,10 @@ alias la="ls -A"
 alias ll="ls -alF"
 
 # config
-alias sshconf='vim ~/.ssh/config'
-alias sshpublickey='cat ~/.ssh/id_rsa.pub'
-alias vimrc='vim ~/.vimrc'
-alias hosts='sudo $EDITOR /etc/hosts'
+alias sshconf="vim ~/.ssh/config"
+alias sshpublickey="cat ~/.ssh/id_rsa.pub"
+alias vimrc="vim ~/.vimrc"
+alias hosts="sudo $EDITOR /etc/hosts"
 
 # network
 alias onlineip="curl https://diagnostic.opendns.com/myip ; echo"
@@ -36,8 +36,8 @@ alias cfresh="rm -rf vendor/ composer.lock && composer i"
 alias a="php artisan"
 
 # Docker
-alias d='docker'
-alias dc='docker-compose'
+alias d="docker"
+alias dc="docker-compose"
 
 # update
 alias brewupdate="brew -v update; brew upgrade --force-bottle --cleanup; brew cleanup; brew cask cleanup;"
