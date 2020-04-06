@@ -13,22 +13,51 @@
         "javascriptreact",
         "vue"
     ],
+    "emmet.includeLanguages": {
+        "twig": "html",
+        "blade": "html"
+    },
+    "explorer.autoReveal": false,
     "explorer.confirmDelete": false,
     "extensions.autoUpdate": false,
-    "files.autoSave": "onFocusChange",
+    "files.autoSave": "onWindowChange",
+    "files.associations": {
+        "*.blade.php": "blade",
+        "*.php": "php",
+        "*.php-cs": "php"
+    },
+    "files.insertFinalNewline": true,
     "files.exclude": {
         "**/node_modules": true
     },
     "git.autofetch": true,
-    "intelephense.environment.phpVersion": "7.1.0",
     "php.suggest.basic": false,
     "php.validate.executablePath": "/usr/local/bin/php",
     "search.showLineNumbers": true,
+    "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
     "workbench.colorTheme": "One Dark Pro",
     "workbench.editor.highlightModifiedTabs": true,
     "workbench.editor.labelFormat": "short",
     "workbench.enableExperiments": false,
     "workbench.iconTheme": "vscode-icons",
-    "workbench.startupEditor": "newUntitledFile"
+    "workbench.startupEditor": "newUntitledFile",
+    "i18n-ally.displayLanguage": "de",
+    "i18n-ally.sourceLanguage": "en",
+    "i18n-ally.enabledFrameworks": [
+        "vue"
+    ],
+    "intelephense.completion.triggerParameterHints": true,
+    "intelephense.completion.insertUseDeclaration": true,
+    "intelephense.completion.fullyQualifyGlobalConstantsAndFunctions": true,
+    "intelephense.telemetry.enabled": false,
+    "intelephense.trace.server": "messages",
+    "intelephense.environment.phpVersion": "7.3.0",
+    "intelephense.files.exclude": [
+        "**/.git/**",
+        "**/.DS_Store/**",
+        "**/node_modules/**",
+        "**/vendor/**/{Test,test,Tests,tests}/**/*Test.php",
+        "**/storage/framework/views/**"
+    ],
 }
