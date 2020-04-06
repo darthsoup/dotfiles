@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# install dotfiles
+
+echo ' install dotfiles'
+
+# quick copy pasta
+rsync -r --verbose --exclude '.git' ./ ../
+
+# resync antibody
+curl -sfL git.io/antibody | sh -s - -b /usr/local/bin
+
+echo ' all finished'
