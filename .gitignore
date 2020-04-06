@@ -1,4 +1,5 @@
 .vim/plugged
+.vim/vbackup
 
 # local overwrites
 .gitconfig.local
