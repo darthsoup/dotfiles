@@ -1,15 +1,29 @@
-# Set promt
+#!/bin/zsh
 
-setopt PROMPT_SUBST
-autoload -U promptinit
-promptinit
-prompt adam1
+# load antibody bundles
+[ -f ~/zsh/bundles.sh ] && source ~/zsh/bundles.sh
 
 # Initialize completion
-autoload -U compinit
-compinit -D
+autoload -Uz compinit
+for dump in ~/.zcompdump(N.mh+24); do
+	compinit
+done
+compinit -C
 
 # Load the shell dotfiles
 for file in ~/zsh/{config,exports,aliases}.zsh; do
-    [ -r "$file" ] && [ -f "$file" ] && source "$file"
+	[ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
+
+# completion
+zstyle ':completion:*' completer _oldlist _expand _complete _match _ignored _approximate
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+zstyle ':completion:*' insert-tab pending
+zstyle ':completion:*' rehash true
+zstyle ':completion:*' menu select=2
+
+antibody_init() {
+	sh ~/zsh/bundles_compile
+	source ~/.zshrc
+	echo ' Sourced zshrc'
+}

@@ -1,3 +1,11 @@
+# prompt
+autoload -U promptinit; promptinit
+PURE_CMD_MAX_EXEC_TIME=10
+zstyle :prompt:pure:path color white
+zstyle ':prompt:pure:prompt:*' color cyan
+zstyle :prompt:pure:git:stash show yes
+prompt pure
+
 # colors
 autoload -U colors
 colors
@@ -14,5 +22,16 @@ unsetopt nomatch
 # history
 setopt EXTENDED_HISTORY
 setopt HIST_REDUCE_BLANKS
-setopt SHARE_HISTORY
 setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_REDUCE_BLANKS
+setopt SHARE_HISTORY
+
+# alerts
+setopt NO_BG_NICE
+setopt NO_HUP
+setopt NO_BEEP
+
+# Tipz
+TIPZ_TEXT='💡 '

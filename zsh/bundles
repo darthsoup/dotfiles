@@ -1,0 +1,12 @@
+# general stuff
+mafredri/zsh-async
+rupa/z
+molovo/tipz
+zsh-users/zsh-completions
+zsh-users/zsh-autosuggestions
+
+# oh my zsh stuff
+robbyrussell/oh-my-zsh path:plugins/docker-compose
+
+# themes
+sindresorhus/pure
