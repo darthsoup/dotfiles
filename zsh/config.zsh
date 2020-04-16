@@ -1,3 +1,8 @@
+# colors
+autoload -U colors
+colors
+export CLICOLOR=1
+
 # prompt
 autoload -U promptinit; promptinit
 PURE_CMD_MAX_EXEC_TIME=10
@@ -6,10 +11,6 @@ zstyle ':prompt:pure:prompt:*' color cyan
 zstyle :prompt:pure:git:stash show yes
 prompt pure
 
-# colors
-autoload -U colors
-colors
-export CLICOLOR=1
 
 # cd movement
 setopt autocd autopushd pushdminus pushdsilent pushdtohome cdablevars

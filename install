@@ -5,14 +5,14 @@
 echo ' install dotfiles'
 
 # quick copy pasta
-rsync -r --verbose --exclude '.git' --exclude 'README.md' --exclude 'install' ./ $HOME
+rsync -r --exclude '.git' --exclude 'README.md' --exclude 'install' ./ $HOME
 
 # resync antibody
-if command -v antibody >/dev/null 2>&1; then
+if type antibody >/dev/null 2>&1; then
+	echo ' antibody already installed'
+else
 	echo ' install antibody'
 	curl -sfL git.io/antibody | sh -s - -b /usr/local/bin
-else
-	echo  ' antibody already installed'
 fi
 
 echo ' all done'
