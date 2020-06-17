@@ -50,6 +50,7 @@
     "intelephense.completion.triggerParameterHints": true,
     "intelephense.completion.insertUseDeclaration": true,
     "intelephense.completion.fullyQualifyGlobalConstantsAndFunctions": true,
+    "intelephense.format.enable": true,
     "intelephense.telemetry.enabled": false,
     "intelephense.trace.server": "messages",
     "intelephense.environment.phpVersion": "7.3.0",
@@ -60,4 +61,10 @@
         "**/vendor/**/{Test,test,Tests,tests}/**/*Test.php",
         "**/storage/framework/views/**"
     ],
+    "php-docblocker.returnGap": true,
+    "php-docblocker.qualifyClassNames": true,
+    "php-docblocker.author": {
+        "name": "Kevin Krummnacker",
+        "email": "kevin.krummnacker@gmail.com"
+    }
 }

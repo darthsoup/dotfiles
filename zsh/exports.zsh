@@ -1,5 +1,6 @@
 export DOTFILES="$HOME/.dotfiles"
 export EDITOR="vim"
+export VEDITOR="code"
 export BROWSER="chrome"
 
 # add Paths

@@ -1,0 +1,24 @@
+{
+    "Vue SFC": {
+        "prefix": "vuebase",
+        "body": [
+          "<template>",
+          "\t<div>",
+          "\t\tHello World",
+          "\t</div>",
+          "</template>",
+          "",
+          "<script>",
+          "export default {",
+          "\tname: 'ComponentName'",
+          "\t${0}",
+          "}",
+          "</script>",
+          "",
+          "<style lang=\"sass\" scoped>",
+          "",
+          "</style>"
+        ],
+        "description": "Base for vuefile"
+    }
+}

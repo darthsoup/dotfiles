@@ -1,28 +1,75 @@
 {
+    "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
     "terminal.integrated.shell.windows": "C:\\Windows\\System32\\cmd.exe",
-    "files.autoSave": "onFocusChange",
-    "explorer.confirmDelete": false,
+    "extensions.autoUpdate": false,
     "workbench.colorTheme": "One Dark Pro",
     "workbench.iconTheme": "vscode-icons",
-    "git.autofetch": true,
-    "extensions.autoUpdate": false,
     "workbench.enableExperiments": false,
     "workbench.startupEditor": "newUntitledFile",
     "workbench.editor.enablePreview": false,
-    "eslint.alwaysShowStatus": true,
-    "eslint.packageManager": "yarn",
-    "editor.fontFamily": "Inconsolata, Consolas, 'Courier New', monospace",
+    "editor.acceptSuggestionOnEnter": "smart",
+    "editor.autoIndent": "brackets",
     "editor.minimap.enabled": false,
+    "editor.fontFamily": "Inconsolata, Consolas, 'Courier New', monospace",
     "editor.cursorBlinking": "blink",
+    "editor.formatOnPaste": true,
     "editor.formatOnSave": false,
+    "editor.renderWhitespace": "all",
+    "explorer.autoReveal": false,
+    "explorer.confirmDelete": false,
+    "files.autoSave": "onWindowChange",
+    "files.associations": {
+        "*.blade.php": "blade",
+        "*.php": "php",
+        "*.php-cs": "php"
+    },
+    "files.eol": "\n",
     "files.exclude": {
         "**/node_modules": true
     },
-    "editor.renderWhitespace": "all",
+    "files.insertFinalNewline": true,
+    "git.autofetch": true,
+    "search.exclude": {
+        "**/*.map": true,
+        "**/node_modules": true
+    },
+    "search.showLineNumbers": true,
+    "projectManager.git.baseFolders": [
+        "D:\\Development"
+    ],
+    "eslint.alwaysShowStatus": true,
+    "eslint.packageManager": "yarn",
     "eslint.validate": [
         "javascript",
         "javascriptreact",
         "vue"
-    ]
+    ],
+    "i18n-ally.displayLanguage": "de",
+    "i18n-ally.sourceLanguage": "en",
+    "i18n-ally.enabledFrameworks": [
+        "vue"
+    ],
+    "php.validate.enable": false,
+    "php.validate.executablePath": "D:\\Development\\PHP\\7.3.14",
+    "intelephense.completion.triggerParameterHints": true,
+    "intelephense.completion.insertUseDeclaration": true,
+    "intelephense.completion.fullyQualifyGlobalConstantsAndFunctions": true,
+    "intelephense.format.enable": true,
+    "intelephense.telemetry.enabled": false,
+    "intelephense.trace.server": "messages",
+    "intelephense.environment.phpVersion": "7.3.0",
+    "intelephense.files.exclude": [
+        "**/.git/**",
+        "**/.DS_Store/**",
+        "**/node_modules/**",
+        "**/vendor/**/{Test,test,Tests,tests}/**/*Test.php",
+        "**/storage/framework/views/**"
+    ],
+    "php-docblocker.returnGap": true,
+    "php-docblocker.qualifyClassNames": true,
+    "php-docblocker.author": {
+        "name": "Kevin Krummnacker",
+        "email": "kevin.krummnacker@gmail.com"
+    }
 }
