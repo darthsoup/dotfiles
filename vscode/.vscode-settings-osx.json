@@ -66,5 +66,7 @@
     "php-docblocker.author": {
         "name": "Kevin Krummnacker",
         "email": "kevin.krummnacker@gmail.com"
-    }
+    },
+    "gitlens.advanced.telemetry.enabled": false,
+    "gitlens.codeLens.enabled": false
 }
