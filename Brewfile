@@ -20,19 +20,28 @@ brew 'tldr'
 brew 'tmux'
 brew 'vim'
 brew 'wget'
+brew 'fpp'
 
 brew 'php'
 brew 'php@7.3'
 brew 'php@7.2'
 brew 'composer'
 
-# casks
-cask 'docker'
+# default apps
+cask '1password'
+cask 'spotify'
 cask 'firefox'
 cask 'google-chrome'
+cask 'zoom'
+cask 'microsoft-teams'
+
+# development apps
+cask 'docker'
 cask 'phpstorm'
 cask 'visual-studio-code'
 cask 'tableplus'
+cask 'sequel-ace' # fork of sequelpro
+cask 'sourcetree'
 
 # cask fonts
 cask 'font-lato'
