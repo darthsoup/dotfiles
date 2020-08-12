@@ -1,5 +1,0 @@
-#!/bin/sh
-
-antibody bundle < ~/zsh/bundles > ~/zsh/bundles.sh
-# antibody update
-echo ' compiled and updated antibody bundles file'

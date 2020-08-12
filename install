@@ -1,21 +1,35 @@
-#!/bin/sh
+#!/usr/bin/env bash
+
+updateAntiBodyBundles() {
+	antibody bundle < ~/zsh/bundles > ~/zsh/bundles.sh;
+
+	# antibody update
+	echo ' compiled and updated antibody bundles file';
+}
 
 # install dotfiles
 
 echo ' install dotfiles'
 
 # quick copy pasta
-rsync -r
-	--exclude '.git'
-	--exclude 'README.md'
+rsync -r \
+	--exclude '.git' \
+	--exclude 'README.md' \
 	--exclude 'install' ./ $HOME
 
 # resync antibody
 if type antibody >/dev/null 2>&1; then
 	echo ' antibody already installed'
+
+	echo ' update antibody bundles'
+	updateAntiBodyBundles;
 else
 	echo ' install antibody'
 	curl -sfL git.io/antibody | sh -s - -b /usr/local/bin
+
+	echo ' update antibody bundles'
+	updateAntiBodyBundles;
 fi
 
 echo ' all done'
+echo ' restart the shell'
