@@ -5,7 +5,10 @@
 echo ' install dotfiles'
 
 # quick copy pasta
-rsync -r --exclude '.git' --exclude 'README.md' --exclude 'install' ./ $HOME
+rsync -r
+	--exclude '.git'
+	--exclude 'README.md'
+	--exclude 'install' ./ $HOME
 
 # resync antibody
 if type antibody >/dev/null 2>&1; then

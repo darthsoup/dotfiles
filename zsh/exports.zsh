@@ -14,5 +14,7 @@ export LC_ALL="en_US.UTF-8"
 
 ## history
 HISTFILE=~/.zsh_history
+SAVEHIST=5000
+HISTSIZE=2000
 export HISTFILESIZE=5000
 export HISTIGNORE="ls:cd:clear:exit:history:pwd:date:* --help"
