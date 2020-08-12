@@ -34,6 +34,7 @@ cask 'firefox'
 cask 'google-chrome'
 cask 'zoom'
 cask 'microsoft-teams'
+cask 'discord' # it also has development channels
 
 # development apps
 cask 'docker'
