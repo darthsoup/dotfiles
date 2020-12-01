@@ -1,13 +1,13 @@
 {
-    "telemetry.enableCrashReporter": false,
-    "telemetry.enableTelemetry": false,
-    "terminal.integrated.shell.windows": "C:\\Windows\\System32\\cmd.exe",
-    "extensions.autoUpdate": false,
+    // Workbench
+
     "workbench.colorTheme": "One Dark Pro",
     "workbench.iconTheme": "vscode-icons",
     "workbench.enableExperiments": false,
     "workbench.startupEditor": "newUntitledFile",
     "workbench.editor.enablePreview": false,
+
+    // Editor
     "editor.acceptSuggestionOnEnter": "smart",
     "editor.autoIndent": "brackets",
     "editor.minimap.enabled": false,
@@ -16,27 +16,60 @@
     "editor.formatOnPaste": true,
     "editor.formatOnSave": false,
     "editor.renderWhitespace": "all",
+
+    // Explorer
     "explorer.autoReveal": false,
     "explorer.confirmDelete": false,
+
+    // Files
     "files.autoSave": "onWindowChange",
     "files.associations": {
+        ".babelrc": "jsonc",
+        ".eslintrc": "jsonc",
         "*.blade.php": "blade",
         "*.php": "php",
         "*.php-cs": "php"
     },
     "files.eol": "\n",
     "files.exclude": {
-        "**/node_modules": true
+        "**/node_modules": true,
+        "**/.cache": true,
+        "**/.idea": true
     },
     "files.insertFinalNewline": true,
-    "git.autofetch": true,
+
+    // Search
     "search.exclude": {
         "**/*.map": true,
         "**/node_modules": true
     },
     "search.showLineNumbers": true,
+
+    // Telemetry
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+
+    // Terminal
+    "terminal.explorerKind": "integrated",
+    "terminal.external.windowsExec": "C:\\Windows\\System32\\cmd.exe",
+    "terminal.external.osxExec": "Terminal.app",
+    "terminal.external.linuxExec": "xterm",
+
+    // Git / GitLens
+    "git.autofetch": true,
+    "git.showInlineOpenFileAction": false,
+    "git.autorefresh": true,
+    "git.decorations.enabled": true,
+    "gitlens.advanced.telemetry.enabled": false,
+    "gitlens.codeLens.enabled": false,
+
+    // Extensions, Misc
+    "extensions.autoUpdate": false,
+
+    // -- Vetur - Vue
+    "vetur.completion.autoImport": false,
     "projectManager.git.baseFolders": [
-        "D:\\Development"
+        "F:\\Dateien\\Development"
     ],
     "eslint.alwaysShowStatus": true,
     "eslint.packageManager": "yarn",
@@ -51,7 +84,7 @@
         "vue"
     ],
     "php.validate.enable": false,
-    "php.validate.executablePath": "D:\\Development\\PHP\\7.3.14",
+    "php.validate.executablePath": "F:\\Dateien\\Development\\php\\8.0.0",
     "intelephense.completion.triggerParameterHints": true,
     "intelephense.completion.insertUseDeclaration": true,
     "intelephense.completion.fullyQualifyGlobalConstantsAndFunctions": true,
@@ -72,6 +105,4 @@
         "name": "Kevin Krummnacker",
         "email": "kevin.krummnacker@gmail.com"
     },
-    "gitlens.advanced.telemetry.enabled": false,
-    "gitlens.codeLens.enabled": false
 }
