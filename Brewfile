@@ -38,6 +38,7 @@ cask 'iterm2'
 cask 'discord' # it also has development channels ;)
 
 # development apps
+cask 'postman'
 cask 'docker'
 cask 'phpstorm'
 cask 'visual-studio-code'
