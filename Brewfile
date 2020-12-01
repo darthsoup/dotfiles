@@ -9,7 +9,7 @@ brew 'z'
 brew 'zsh'
 
 brew 'git'
-brew 'node'
+brew 'node@12'
 brew 'yarn'
 
 brew 'bat'
@@ -24,17 +24,18 @@ brew 'fpp'
 
 brew 'php'
 brew 'php@7.3'
-brew 'php@7.2'
 brew 'composer'
 
 # default apps
 cask '1password'
+cask 'bitwarden'
 cask 'spotify'
 cask 'firefox'
 cask 'google-chrome'
 cask 'zoom'
 cask 'microsoft-teams'
-cask 'discord' # it also has development channels
+cask 'iterm2'
+cask 'discord' # it also has development channels ;)
 
 # development apps
 cask 'docker'
