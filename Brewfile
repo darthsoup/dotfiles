@@ -9,7 +9,7 @@ brew 'z'
 brew 'zsh'
 
 brew 'git'
-brew 'node@12'
+brew 'node@14'
 brew 'yarn'
 
 brew 'bat'
@@ -44,7 +44,7 @@ cask 'phpstorm'
 cask 'visual-studio-code'
 cask 'tableplus'
 cask 'sequel-ace' # fork of sequelpro
-cask 'sourcetree'
+cask 'fork'
 
 # cask fonts
 cask 'font-lato'
