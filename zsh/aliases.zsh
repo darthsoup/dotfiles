@@ -37,7 +37,23 @@ alias a="php artisan"
 
 # Docker
 alias d="docker"
-alias dc="docker-compose"
+alias dco='docker compose'
+alias dcb='docker compose build'
+alias dce='docker compose exec'
+alias dcps='docker compose ps'
+alias dcrestart='docker compose restart'
+alias dcrm='docker compose rm'
+alias dcr='docker compose run'
+alias dcstop='docker compose stop'
+alias dcup='docker compose up'
+alias dcupb='docker compose up --build'
+alias dcupd='docker compose up -d'
+alias dcdn='docker compose down'
+alias dcl='docker compose logs'
+alias dclf='docker compose logs -f'
+alias dcpull='docker compose pull'
+alias dcstart='docker compose start'
+alias dck='docker compose kill'
 
 # update
 alias brewupdate="brew -v update; brew upgrade --force-bottle --cleanup; brew cleanup; brew cask cleanup;"
