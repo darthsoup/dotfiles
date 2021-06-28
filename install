@@ -1,35 +1,55 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-updateAntiBodyBundles() {
+update_anti_body_bundles() {
 	antibody bundle < ~/zsh/bundles > ~/zsh/bundles.sh;
 
 	# antibody update
 	echo ' compiled and updated antibody bundles file';
 }
 
-# install dotfiles
+ask_for_sudo() {
+	sudo -v
 
-echo ' install dotfiles'
+	while true; do
+		sudo -n true
+		sleep 60
+		kill -0 "$$" || exit
+	done &> /dev/null &
+}
 
-# quick copy pasta
-rsync -r \
-	--exclude '.git' \
-	--exclude 'README.md' \
-	--exclude 'install' ./ $HOME
+main() {
+	# install dotfiles
 
-# resync antibody
-if type antibody >/dev/null 2>&1; then
-	echo ' antibody already installed'
+	echo ' install dotfiles'
 
-	echo ' update antibody bundles'
-	updateAntiBodyBundles;
-else
-	echo ' install antibody'
-	curl -sfL git.io/antibody | sh -s - -b /usr/local/bin
+	# ask for Sudo
 
-	echo ' update antibody bundles'
-	updateAntiBodyBundles;
-fi
+	ask_for_sudo;
 
-echo ' all done'
-echo ' restart the shell'
+	# quick copy pasta
+
+	rsync -r \
+		--exclude '.git' \
+		--exclude 'README.md' \
+		--exclude 'install' ./ $HOME
+
+	# resync antibody
+
+	if type antibody >/dev/null 2>&1; then
+		echo ' antibody already installed'
+
+		echo ' update antibody bundles'
+		update_anti_body_bundles;
+	else
+		echo ' install antibody'
+		curl -sfL git.io/antibody | sh -s - -b /usr/local/bin
+
+		echo ' update antibody bundles'
+		update_anti_body_bundles;
+	fi
+
+	echo ' all done'
+	echo ' restart the shell'
+}
+
+main "$@"

@@ -2,13 +2,14 @@
 alias mkdir="mkdir -p"
 alias rm="rm -i"
 
-# changedirectory shortcuts
+# directory shortcuts
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias cd..="cd .." # fix my own mistake
-alias projects="cd $HOME/Projects"
+alias projects="cd $HOME/code"
+alias code="cd $HOME/code"
 
 # listing
 alias l="ls -CF"
@@ -23,17 +24,14 @@ alias hosts="sudo $EDITOR /etc/hosts"
 
 # network
 alias onlineip="curl https://diagnostic.opendns.com/myip ; echo"
-alias localip-wired="ipconfig getifaddr en1"
-alias localip-wireless="ipconfig getifaddr ap1"
 
 # php
+alias composer7.4='php7.4 /usr/local/bin/composer'
+alias composer8.0='php8.0 /usr/local/bin/composer'
 alias phpunit="vendor/bin/phpunit"
-alias artisan="php artisan"
+alias artisan="php artisan" # laravel
 alias cu="composer update"
 alias cfresh="rm -rf vendor/ composer.lock && composer i"
-
-# PHP Laravel
-alias a="php artisan"
 
 # Docker
 alias d="docker"
@@ -55,5 +53,10 @@ alias dcpull='docker compose pull'
 alias dcstart='docker compose start'
 alias dck='docker compose kill'
 
-# update
-alias brewupdate="brew -v update; brew upgrade --force-bottle --cleanup; brew cleanup; brew cask cleanup;"
+## Load custom system specific aliases
+if [[ `uname` == "Linux" ]]; then
+    source ~/zsh/aliases_linux.zsh
+
+elif [[ `uname` == "Darwin" ]]; then
+    source ~/zsh/aliases_osx.zsh
+fi
