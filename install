@@ -42,7 +42,7 @@ main() {
 		update_anti_body_bundles;
 	else
 		echo ' install antibody'
-		curl -sfL git.io/antibody | sh -s - -b /usr/local/bin
+		sudo curl -sfL git.io/antibody | sh -s - -b /usr/local/bin
 
 		echo ' update antibody bundles'
 		update_anti_body_bundles;
