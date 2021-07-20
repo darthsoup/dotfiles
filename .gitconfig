@@ -29,25 +29,37 @@
     # show all tags
     tags = tag -l
 
-    # show all branches
-    branches = branch -a
-
     # show all remotes
     remotes = remote -v
 
     # show all stashes
     stashes = stash list
 
-    # show all branches which are not remote yet
-    unpushedbranches = log --branches --not --remotes --no-walk --decorate --oneline
+    # branches
 
-    # redos all current changes
-    shitshit = reset --hard
+    branches = branch -a # show all branches
+    unpushed = log --branches --not --remotes --no-walk --decorate --oneline # show unpushed branches
 
-    # uncommit all softly (goes back and keeps current changes)
-    uncommit = reset --soft HEAD^
+    # reset 
+
+    shitshit = reset --hard  # redos all current changes
+    uncommit = reset --soft HEAD^ # uncommit all softly (goes back and keeps current changes)
+
+    # diff
+
+    d = diff
+    dno = diff --name-only
+
+    # worktree
+    wt = worktree
+    wta = worktree add
+    wtl = worktree list
+    wtr = worktree remove
 
 [color]
+    branch = auto
+    diff = auto
+    status = auto
     ui = auto
 
 [color "status"]
@@ -62,10 +74,10 @@
 
 [core]
     autocrlf = input
-    editor = vim
     excludesfile = ~/.gitignore
     attributesfile = ~/.gitattributes
     untrackedCache = true
+    ignoreCase = false
 
 [help]
     autocorrect = 0
