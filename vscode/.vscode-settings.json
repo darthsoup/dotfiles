@@ -1,6 +1,5 @@
 {
     // Workbench
-
     "workbench.colorTheme": "One Dark Pro",
     "workbench.iconTheme": "vscode-icons",
     "workbench.enableExperiments": false,
@@ -50,6 +49,7 @@
     "telemetry.enableTelemetry": false,
 
     // Terminal
+    "terminal.integrated.defaultProfile.windows": "Debian (WSL)",
     "terminal.explorerKind": "integrated",
     "terminal.external.windowsExec": "C:\\Windows\\System32\\cmd.exe",
     "terminal.external.osxExec": "Terminal.app",
@@ -62,27 +62,38 @@
     "git.decorations.enabled": true,
     "gitlens.advanced.telemetry.enabled": false,
     "gitlens.codeLens.enabled": false,
+    "projectManager.git.baseFolders": [
+        "F:\\Dateien\\Development"
+    ],
 
     // Extensions, Misc
     "extensions.autoUpdate": false,
 
-    // -- Vetur - Vue
+    // -- Vue Development
     "vetur.completion.autoImport": false,
-    "projectManager.git.baseFolders": [
-        "F:\\Dateien\\Development"
-    ],
+
     "eslint.alwaysShowStatus": true,
-    "eslint.packageManager": "yarn",
+    "eslint.packageManager": "npm",
     "eslint.validate": [
+        "typescript",
         "javascript",
         "javascriptreact",
         "vue"
     ],
+    
+    // -- i18n ally
     "i18n-ally.displayLanguage": "de",
     "i18n-ally.sourceLanguage": "en",
     "i18n-ally.enabledFrameworks": [
         "vue"
     ],
+    "i18n-ally.translate.deepl.useFreeApiEntry": true,
+    "i18n-ally.translate.engines": [
+        "deepl",
+        //"google"
+    ],
+    
+    // -- PHP 
     "php.validate.enable": false,
     "php.validate.executablePath": "F:\\Dateien\\Development\\php\\8.0.0",
     "intelephense.completion.triggerParameterHints": true,
@@ -91,7 +102,7 @@
     "intelephense.format.enable": true,
     "intelephense.telemetry.enabled": false,
     "intelephense.trace.server": "messages",
-    "intelephense.environment.phpVersion": "7.3.0",
+    "intelephense.environment.phpVersion": "8.0.0",
     "intelephense.files.exclude": [
         "**/.git/**",
         "**/.DS_Store/**",
