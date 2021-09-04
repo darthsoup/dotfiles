@@ -9,7 +9,6 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias cd..="cd .." # fix my own mistake
 alias projects="cd $HOME/code"
-alias code="cd $HOME/code"
 
 # listing
 alias l="ls -CF"
