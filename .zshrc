@@ -1,14 +1,14 @@
 #!/bin/zsh
 
-# load antibody bundles
-[ -f ~/zsh/bundles.sh ] && source ~/zsh/bundles.sh
-
 # Initialize completion
 autoload -Uz compinit
 for dump in ~/.zcompdump(N.mh+24); do
 	compinit
 done
 compinit -C
+
+# load antibody bundles
+[ -f ~/zsh/bundles.sh ] && source ~/zsh/bundles.sh
 
 # Load the shell dotfiles
 for file in ~/zsh/{config,exports,aliases}.zsh; do

@@ -29,9 +29,12 @@ alias composer7.4='php7.4 /usr/local/bin/composer'
 alias composer8.0='php8.0 /usr/local/bin/composer'
 alias phpunit="vendor/bin/phpunit"
 alias phpstan="vendor/bin/phpstan"
-alias artisan="php artisan" # laravel
 alias cu="composer update"
 alias cfresh="rm -rf vendor/ composer.lock && composer i"
+
+# php (laravel)
+alias artisan="php artisan"
+alias artisanfresh="artisan clear-compiled && artisan cache:clear && artisan route:clear && artisan config:clear && artisan view:clear && composer dumpautoload"
 
 # Docker
 alias d="docker"

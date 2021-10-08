@@ -4,6 +4,7 @@ rupa/z
 molovo/tipz
 zsh-users/zsh-completions
 zsh-users/zsh-autosuggestions
+robbyrussell/oh-my-zsh path:plugins/npm
 
 # themes
 sindresorhus/pure
