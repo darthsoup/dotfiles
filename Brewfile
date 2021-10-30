@@ -9,6 +9,7 @@ brew 'z'
 brew 'zsh'
 
 brew 'git'
+brew 'node@16'
 brew 'node@14'
 brew 'yarn'
 
