@@ -15,6 +15,9 @@
     "editor.formatOnPaste": true,
     "editor.formatOnSave": false,
     "editor.renderWhitespace": "all",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
 
     // Explorer
     "explorer.autoReveal": false,
@@ -80,20 +83,22 @@
         "javascriptreact",
         "vue"
     ],
-    
+
     // -- i18n ally
     "i18n-ally.displayLanguage": "de",
     "i18n-ally.sourceLanguage": "en",
     "i18n-ally.enabledFrameworks": [
         "vue"
     ],
+    "i18n-ally.keystyle": "nested",
+    "i18n-ally.sortKeys": true,
     "i18n-ally.translate.deepl.useFreeApiEntry": true,
     "i18n-ally.translate.engines": [
         "deepl",
         //"google"
     ],
-    
-    // -- PHP 
+
+    // -- PHP
     "php.validate.enable": false,
     "php.validate.executablePath": "F:\\Dateien\\Development\\php\\8.0.0",
     "intelephense.completion.triggerParameterHints": true,
@@ -111,9 +116,5 @@
         "**/storage/framework/views/**"
     ],
     "php-docblocker.returnGap": true,
-    "php-docblocker.qualifyClassNames": true,
-    "php-docblocker.author": {
-        "name": "Kevin Krummnacker",
-        "email": "kevin.krummnacker@gmail.com"
-    },
+    "php-docblocker.qualifyClassNames": true
 }

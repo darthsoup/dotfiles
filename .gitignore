@@ -2,9 +2,6 @@
 .vim/plugged
 .vim/vbackup
 
-# vscode
-.vscode
-
 # local overwrites
 .gitconfig.local
 
@@ -18,6 +15,5 @@ Thumbs.db
 # code
 .phpunit.result.cache
 .idea
-.vscode
 npm-debug.log
 yarn-error.log
