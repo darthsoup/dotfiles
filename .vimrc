@@ -1,90 +1,114 @@
-" vim:fdm=marker
+" -----------------------
+" General settings
+" -----------------------
 
-" disable compatible mode, be improved boy
-set nocompatible
+set nocompatible				" disable compatible mode, be improved boy
 
 " Basic Settings
-syntax enable                   " Enable Syntax Highlight
-filetype plugin on
+syntax on						" Enable syntax highlight
+
+if has('autocmd')
+	filetype plugin indent on
+endif
+
 behave xterm
-set ttyfast                     " more screen updates
-set encoding=utf-8
+set ttyfast						" faster screen updates
+set ffs=unix,dos,mac			" use unix as standard
+set encoding=UTF-8
 set noswapfile
 set term=xterm-256color
 set shortmess+=I
+set shell=zsh
 
+" -----------------------
 " Editor settings
-	" Backups & Temp
-	set backup
-	set backupdir=~/.vim/vbackup
-	set history=2048
+" -----------------------
 
-	" Search
-	set hlsearch
-	set ignorecase
-	set gdefault
+" Backups & Temp
+set backup
+set backupdir=~/.vim/backups
 
-	" Theme
-	set title
-	set number
-	set laststatus=2
+if has('cmdline_hist')
+	set history=5000			" Increase command line history.
+endif
 
-	" ColorScheme
-	set t_Co=256
-	set background=dark
-	colorscheme molotov
+" Search
+set noshowmode
+set hlsearch
+set ignorecase
+set gdefault
 
-	" Text Format
-	set nolist
-	set listchars=tab:\ \ ,trail:\.
-	set autoindent
-	set tabstop=4
-	set softtabstop=4
+" Theme
+set title
+set number
+set laststatus=2
 
-	" Flow Handling
-	set scroll=10
-	set scrolloff=5
-	set sidescroll=8
-	set showcmd
-	set showmatch
-	set noerrorbells visualbell t_vb=
-	set mouse=
+set t_Co=256
+set background=dark
+colorscheme molotov
 
-" End Settings
+" Text Format
+set nolist
+set listchars=tab:\ \ ,trail:\.
+set autoindent
+set tabstop=4
+set softtabstop=4
 
-" Plugin Settings
-	" fzf
-	nnoremap <C-p> :Files<CR>
+" Flow Handling
+set scroll=10
+set scrolloff=5
+set sidescroll=8
+set showcmd
+set showmatch
+" set noerrorbells
+set mouse=
 
-	" Nerdtree
-	autocmd StdinReadPre * let s:std_in=1
-	autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-	map <C-n> :NERDTreeToggle<CR>
+" Key
+set backspace=indent,eol,start	" Makes backspace key more powerful.
 
-	" Airline
-	augroup airline_config
-		autocmd!
-		let g:airline_theme='molokai'
-		" let g:airline_powerline_fonts = 1
-		" let g:airline_enable_syntastic = 1
-	augroup END
-
+" -----------------------
 " Plugins
-call plug#begin('~/.vim/plugged')
-		" Basics
-		Plug 'vim-airline/vim-airline'
-		Plug 'vim-airline/vim-airline-themes'
-		Plug 'mhinz/vim-startify'
-		Plug 'sheerun/vim-polyglot'
-		Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-		Plug 'junegunn/fzf.vim'
+" -----------------------
 
-		" Themes
-		Plug 'gf3/molotov'
-		Plug 'joshdick/onedark.vim'
+function! InitMinpac() abort
 
-		" Others
-		Plug 'preservim/nerdtree'
-		Plug 'editorconfig/editorconfig-vim'
-		Plug 'ciaranm/securemodelines'
-call plug#end()
+	packadd minpac
+
+	call minpac#init()
+	call minpac#add('k-takata/minpac', { 'type': 'opt' })
+
+	" Basics
+	call minpac#add('vim-airline/vim-airline')
+	call minpac#add('vim-airline/vim-airline-themes')
+	call minpac#add('mhinz/vim-startify')
+	call minpac#add('sheerun/vim-polyglot', { 'type': 'opt' })
+	call minpac#add('ciaranm/securemodelines')
+	call minpac#add('preservim/nerdtree')
+	call minpac#add('tpope/vim-fugitive')
+
+	" Themes
+	call minpac#add('gf3/molotov')
+	call minpac#add('joshdick/onedark.vim')
+
+	" Others
+	call minpac#add('editorconfig/editorconfig-vim')
+	call minpac#add('chr4/nginx.vim')
+
+endfunction
+
+command! PacSetup		call InitMinpac() | call minpac#update('', { 'do': 'quit! | quit!' })
+command! PacStatus		call InitMinpac() | call minpac#status()
+command! PacPackages	call InitMinpac() | call minpac#getpackages()
+command! PacClean		call InitMinpac() | call minpac#clean()
+command! PacUpdate		call InitMinpac() | call minpac#update('', { 'do': 'call minpac#status() | quit! | quit!' })
+
+" -----------------------
+" Plugin Settings
+" -----------------------
+
+" Nerdtree
+autocmd StdinReadPre * let s:std_in=1
+map <C-n> :NERDTreeToggle<CR>
+
+" Airline
+let g:airline_theme='molokai'
