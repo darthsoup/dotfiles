@@ -1,6 +1,5 @@
 # vim
-.vim/plugged
-.vim/vbackup
+.vim/pack/
 
 # local overwrites
 .gitconfig.local
@@ -15,5 +14,9 @@ Thumbs.db
 # code
 .phpunit.result.cache
 .idea
-npm-debug.log
-yarn-error.log
+
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+

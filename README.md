@@ -14,6 +14,14 @@ cd dotfiles
 sh install
 ```
 
+### vim
+
+Vim makes use of minpac for plugin management. At the first start-up call:
+
+```vim
+:PacSetup
+```
+
 ### git
 
 dont forget to add your `.gitconfig.local` file
@@ -23,3 +31,7 @@ dont forget to add your `.gitconfig.local` file
 	name = 'Your Name'
 	email = 'your@email.com'
 ```
+
+## License
+
+See the bundled [LICENSE](https://github.com/darthsoup/dotfiles/blob/master/LICENSE.md) file for details.

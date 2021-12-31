@@ -40,7 +40,7 @@
     branches = branch -a # show all branches
     unpushed = log --branches --not --remotes --no-walk --decorate --oneline # show unpushed branches
 
-    # reset 
+    # reset
 
     shitshit = reset --hard  # redos all current changes
     uncommit = reset --soft HEAD^ # uncommit all softly (goes back and keeps current changes)
@@ -99,3 +99,17 @@
 
 [url "git://github.com/"]
     insteadOf = "github:"
+
+[user]
+    useConfigOnly = true
+
+[include]
+
+    # Load local configs.
+    # https://git-scm.com/docs/git-config#_includes
+    #
+    # [!] The following needs to remain at the end of this file in
+    #     order to allow any of the above configs to be overwritten
+    #     by the local ones
+
+    path = ~/.gitconfig.local
