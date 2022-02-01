@@ -23,6 +23,7 @@ main() {
 
 	rsync -r \
 		--exclude '.git' \
+		--exclude 'LICENSE.md' \
 		--exclude 'README.md' \
 		--exclude 'install' ./ $HOME
 
