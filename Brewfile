@@ -11,7 +11,7 @@ brew 'zsh'
 brew 'git'
 brew 'node@16'
 brew 'node@14'
-brew 'yarn'
+brew 'pnpm'
 
 brew 'bat'
 brew 'cloc'
@@ -24,6 +24,7 @@ brew 'wget'
 brew 'fpp'
 
 brew 'php'
+brew 'php@8.0'
 brew 'php@7.4'
 brew 'composer'
 
@@ -40,6 +41,7 @@ cask 'discord' # it also has development channels ;)
 
 # development apps
 cask 'postman'
+cask 'insomnia'
 cask 'docker'
 cask 'phpstorm'
 cask 'visual-studio-code'
