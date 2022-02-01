@@ -27,6 +27,12 @@ main() {
 		--exclude 'README.md' \
 		--exclude 'install' ./ $HOME
 
+	echo ' install minpac for vim'
+
+	[[ -d ~/.vim/pack/minpac/opt/minpac ]] ||
+		git clone --depth 1 -- \
+			https://github.com/k-takata/minpac.git ~/.vim/pack/minpac/opt/minpac
+
 	echo ' all done'
 	echo ' restart the shell'
 }
