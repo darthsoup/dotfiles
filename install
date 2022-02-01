@@ -1,12 +1,5 @@
 #!/bin/bash
 
-update_anti_body_bundles() {
-	antibody bundle < ~/zsh/bundles > ~/zsh/bundles.sh;
-
-	# antibody update
-	echo ' compiled and updated antibody bundles file';
-}
-
 ask_for_sudo() {
 	sudo -v
 
@@ -32,21 +25,6 @@ main() {
 		--exclude '.git' \
 		--exclude 'README.md' \
 		--exclude 'install' ./ $HOME
-
-	# resync antibody
-
-	if type antibody >/dev/null 2>&1; then
-		echo ' antibody already installed'
-
-		echo ' update antibody bundles'
-		update_anti_body_bundles;
-	else
-		echo ' install antibody'
-		sudo curl -sfL git.io/antibody | sh -s - -b /usr/local/bin
-
-		echo ' update antibody bundles'
-		update_anti_body_bundles;
-	fi
 
 	echo ' all done'
 	echo ' restart the shell'

@@ -7,8 +7,8 @@ for dump in ~/.zcompdump(N.mh+24); do
 done
 compinit -C
 
-# load antibody bundles
-[ -f ~/zsh/bundles.sh ] && source ~/zsh/bundles.sh
+# load plugins via Znap
+source ~/zsh/plugins.zsh
 
 # Load the shell dotfiles
 for file in ~/zsh/{config,exports,aliases}.zsh; do
@@ -21,9 +21,3 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*' insert-tab pending
 zstyle ':completion:*' rehash true
 zstyle ':completion:*' menu select=2
-
-antibody_init() {
-	sh ~/zsh/bundles_compile
-	source ~/.zshrc
-	echo ' Sourced zshrc'
-}
