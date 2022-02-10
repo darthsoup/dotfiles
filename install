@@ -33,6 +33,14 @@ main() {
 		git clone --depth 1 -- \
 			https://github.com/k-takata/minpac.git ~/.vim/pack/minpac/opt/minpac
 
+	echo ' install znap'
+
+	# Download Znap, if it's not there yet.
+	[[ -f ~/zsh/znap/znap.zsh ]] ||
+		git clone --depth 1 -- \
+			https://github.com/marlonrichert/zsh-snap.git ~/zsh/znap
+
+
 	echo ' all done'
 	echo ' restart the shell'
 }

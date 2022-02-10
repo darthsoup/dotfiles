@@ -1,14 +1,14 @@
 #!/bin/zsh
 
+# load plugins via Znap
+source ~/zsh/plugins.zsh
+
 # Initialize completion
 autoload -Uz compinit
 for dump in ~/.zcompdump(N.mh+24); do
 	compinit
 done
 compinit -C
-
-# load plugins via Znap
-source ~/zsh/plugins.zsh
 
 # Load the shell dotfiles
 for file in ~/zsh/{config,exports,aliases}.zsh; do
