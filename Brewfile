@@ -11,6 +11,7 @@ brew 'zsh'
 brew 'git'
 brew 'node@16'
 brew 'node@14'
+brew 'yarn'
 brew 'pnpm'
 
 brew 'bat'
@@ -34,13 +35,11 @@ cask 'bitwarden'
 cask 'spotify'
 cask 'firefox'
 cask 'google-chrome'
-cask 'zoom'
 cask 'microsoft-teams'
 cask 'iterm2'
 cask 'discord' # it also has development channels ;)
 
 # development apps
-cask 'postman'
 cask 'insomnia'
 cask 'docker'
 cask 'phpstorm'
