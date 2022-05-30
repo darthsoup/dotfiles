@@ -15,6 +15,10 @@ alias l="ls -CF"
 alias la="ls -A"
 alias ll="ls -alF"
 
+# Helpers
+alias df='df -h' # disk free, in Gigabytes
+alias du='du -h -c' # calculate disk usage for a folder
+
 # config
 alias sshconf="vim ~/.ssh/config"
 alias sshpublickey="cat ~/.ssh/id_rsa.pub"
