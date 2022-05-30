@@ -30,6 +30,8 @@ brew 'php@7.4'
 brew 'composer'
 
 # default apps
+cask 'aldente'
+cask 'cyberduck'
 cask '1password'
 cask 'bitwarden'
 cask 'spotify'
@@ -37,6 +39,7 @@ cask 'firefox'
 cask 'google-chrome'
 cask 'microsoft-teams'
 cask 'iterm2'
+cask 'royal-tsx'
 cask 'discord' # it also has development channels ;)
 
 # development apps
