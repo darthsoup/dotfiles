@@ -25,6 +25,7 @@ brew 'wget'
 brew 'fpp'
 
 brew 'php'
+brew 'php@8.1'
 brew 'php@8.0'
 brew 'php@7.4'
 brew 'composer'
@@ -41,12 +42,19 @@ cask 'microsoft-teams'
 cask 'iterm2'
 cask 'royal-tsx'
 cask 'discord' # it also has development channels ;)
+cask 'dropbox'
+cask 'coconutbattery'
+cask 'audacity'
+cask 'alfred'
+cask 'numi'
+cask 'vlc'
 
 # development apps
 cask 'insomnia'
 cask 'docker'
 cask 'phpstorm'
 cask 'visual-studio-code'
+cask 'sublime-text'
 cask 'tableplus'
 cask 'sequel-ace' # fork of sequelpro
 cask 'fork'
