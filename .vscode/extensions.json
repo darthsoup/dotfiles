@@ -1,9 +1,8 @@
 {
   "recommendations": [
-    "johnsoncodehk.volar",
+    "Vue.volar",
     "lokalise.i18n-ally",
     "dbaeumer.vscode-eslint",
-    "voorjaar.windicss-intellisense",
     "csstools.postcss",
     "alefragnani.project-manager",
     "bmewburn.vscode-intelephense-client",
@@ -14,7 +13,6 @@
     "eamodio.gitlens",
     "EditorConfig.EditorConfig",
     "eg2.vscode-npm-script",
-    "ikappas.phpcs",
     "mikestead.dotenv",
     "ms-azuretools.vscode-docker",
     "ms-vscode-remote.remote-wsl",
@@ -28,6 +26,7 @@
     "bradlc.vscode-tailwindcss",
     "heybourn.headwind",
     "redhat.vscode-yaml",
-    "rebornix.ruby"
+    "rebornix.ruby",
+    "richie5um2.vscode-sort-json",
   ]
 }
