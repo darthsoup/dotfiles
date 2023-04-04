@@ -31,9 +31,8 @@ brew 'php@7.4'
 brew 'composer'
 
 # default apps
-cask 'aldente'
 cask 'cyberduck'
-cask '1password'
+cask 'keepassxc'
 cask 'bitwarden'
 cask 'spotify'
 cask 'firefox'
@@ -42,7 +41,7 @@ cask 'microsoft-teams'
 cask 'iterm2'
 cask 'royal-tsx'
 cask 'discord' # it also has development channels ;)
-cask 'dropbox'
+cask 'synology-drive'
 cask 'coconutbattery'
 cask 'audacity'
 cask 'alfred'
@@ -56,10 +55,10 @@ cask 'phpstorm'
 cask 'visual-studio-code'
 cask 'sublime-text'
 cask 'tableplus'
-cask 'sequel-ace' # fork of sequelpro
 cask 'fork'
 
 # cask fonts
+cask 'font-input'
 cask 'font-lato'
 cask 'font-open-sans'
 cask 'font-hack'
