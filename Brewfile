@@ -1,16 +1,18 @@
 # Taps
+
 tap 'homebrew/bundle'
 tap 'homebrew/cask'
 tap 'homebrew/core'
 tap 'homebrew/cask-fonts'
 
 # Stuff to install
+
 brew 'z'
 brew 'zsh'
 
 brew 'git'
 brew 'node@16'
-brew 'node@14'
+brew 'node@18'
 brew 'yarn'
 brew 'pnpm'
 
@@ -18,6 +20,7 @@ brew 'bat'
 brew 'cloc'
 brew 'exa'
 brew 'htop'
+brew 'iftop'
 brew 'tldr'
 brew 'tmux'
 brew 'vim'
@@ -30,7 +33,10 @@ brew 'php@8.0'
 brew 'php@7.4'
 brew 'composer'
 
+
+
 # default apps
+
 cask 'cyberduck'
 cask 'keepassxc'
 cask 'bitwarden'
@@ -49,6 +55,7 @@ cask 'numi'
 cask 'vlc'
 
 # development apps
+
 cask 'insomnia'
 cask 'docker'
 cask 'phpstorm'
@@ -56,6 +63,10 @@ cask 'visual-studio-code'
 cask 'sublime-text'
 cask 'tableplus'
 cask 'fork'
+
+# others
+
+cask 'mactex'
 
 # cask fonts
 cask 'font-input'
