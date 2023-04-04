@@ -1,120 +1,107 @@
 {
-    // Workbench
-    "workbench.colorTheme": "One Dark Pro",
-    "workbench.iconTheme": "vscode-icons",
-    "workbench.enableExperiments": false,
-    "workbench.startupEditor": "newUntitledFile",
-    "workbench.editor.enablePreview": false,
+  // Visuals
+  "workbench.colorTheme": "One Dark Pro",
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.enableExperiments": false,
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.editor.enablePreview": false,
+  "workbench.fontAliasing": "auto",
+  "workbench.tree.indent": 8,
+  "workbench.list.smoothScrolling": true,
 
-    // Editor
-    "editor.acceptSuggestionOnEnter": "smart",
-    "editor.autoIndent": "brackets",
-    "editor.minimap.enabled": false,
-    "editor.fontFamily": "Inconsolata, Consolas, 'Courier New', monospace",
-    "editor.cursorBlinking": "blink",
-    "editor.formatOnPaste": true,
-    "editor.formatOnSave": false,
-    "editor.renderWhitespace": "all",
-    "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": true
-    },
+  // Editor
+  "editor.accessibilitySupport": "off",
+  "editor.acceptSuggestionOnEnter": "smart",
+  "editor.autoIndent": "brackets",
+  "editor.guides.bracketPairs": "active",
+  "editor.find.addExtraSpaceOnTop": false,
+  "editor.minimap.enabled": true,
+  "editor.fontFamily": "Input Mono, Fira Code, monospace",
+  "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss06', 'zero'",
+  "editor.cursorBlinking": "blink",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": false,
+  "editor.renderWhitespace": "all",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.organizeImports": false
+  },
+  "editor.hover.sticky": false,
 
-    // Explorer
-    "explorer.autoReveal": false,
-    "explorer.confirmDelete": false,
+  // Window
+  "window.dialogStyle": "custom",
 
-    // Files
-    "files.autoSave": "onWindowChange",
-    "files.associations": {
-        ".babelrc": "jsonc",
-        ".eslintrc": "jsonc",
-        "*.blade.php": "blade",
-        "*.php": "php",
-        "*.php-cs": "php"
-    },
-    "files.eol": "\n",
-    "files.exclude": {
-        "**/node_modules": true,
-        "**/.cache": true,
-        "**/.idea": true
-    },
-    "files.insertFinalNewline": true,
+  // Explorer
+  "explorer.autoReveal": false,
+  "explorer.confirmDelete": false,
 
-    // Search
-    "search.exclude": {
-        "**/*.map": true,
-        "**/node_modules": true
-    },
-    "search.showLineNumbers": true,
+  // Files
+  "files.autoSave": "onWindowChange",
+  "files.associations": {
+    ".babelrc": "jsonc",
+    ".eslintrc": "jsonc",
+    "*.blade.php": "blade",
+    "*.php": "php",
+    "*.php-cs": "php"
+  },
+  "files.eol": "\n",
+  "files.exclude": {
+    "**/.git": true,
+    "**/.pnpm": true,
+    "**/.vscode": true,
+    "**/.yarn": true,
+    "**/.cache": true,
+    "**/.idea": true,
+    "**/node_modules": true,
+    "**/package-lock.json": true,
+    "**/pnpm-lock.yaml": true,
+    "**/tmp": true,
+    "**/yarn.lock": true
+  },
+  "files.simpleDialog.enable": true,
+  "files.insertFinalNewline": true,
 
-    // Telemetry
-    "telemetry.enableCrashReporter": false,
-    "telemetry.enableTelemetry": false,
+  // Search
+  "search.exclude": {
+    "**/node_modules": true
+  },
+  "search.showLineNumbers": true,
 
-    // Terminal
-    "terminal.integrated.defaultProfile.windows": "Debian (WSL)",
-    "terminal.explorerKind": "integrated",
-    "terminal.external.windowsExec": "C:\\Windows\\System32\\cmd.exe",
-    "terminal.external.osxExec": "Terminal.app",
-    "terminal.external.linuxExec": "xterm",
+  // Extensions, Misc
+  "extensions.autoUpdate": false,
+  "extensions.ignoreRecommendations": true,
 
-    // Git / GitLens
-    "git.autofetch": true,
-    "git.showInlineOpenFileAction": false,
-    "git.autorefresh": true,
-    "git.decorations.enabled": true,
-    "gitlens.advanced.telemetry.enabled": false,
-    "gitlens.codeLens.enabled": false,
-    "projectManager.git.baseFolders": [
-        "F:\\Dateien\\Development"
-    ],
+  // Volar
+  "volar.autoCompleteRefs": false,
+  "volar.completion.preferredTagNameCase": "pascal",
 
-    // Extensions, Misc
-    "extensions.autoUpdate": false,
+  // -- i18n ally
+  "i18n-ally.displayLanguage": "de",
+  "i18n-ally.sourceLanguage": "en",
+  "i18n-ally.enabledFrameworks": [
+    "vue"
+  ],
+  "i18n-ally.keystyle": "nested",
+  "i18n-ally.sortKeys": true,
+  "i18n-ally.translate.deepl.useFreeApiEntry": true,
+  "i18n-ally.translate.engines": [
+    "deepl",
+    "google"
+  ],
 
-    // -- Vue Development
-    "vetur.completion.autoImport": false,
-
-    "eslint.alwaysShowStatus": true,
-    "eslint.packageManager": "npm",
-    "eslint.validate": [
-        "typescript",
-        "javascript",
-        "javascriptreact",
-        "vue"
-    ],
-
-    // -- i18n ally
-    "i18n-ally.displayLanguage": "de",
-    "i18n-ally.sourceLanguage": "en",
-    "i18n-ally.enabledFrameworks": [
-        "vue"
-    ],
-    "i18n-ally.keystyle": "nested",
-    "i18n-ally.sortKeys": true,
-    "i18n-ally.translate.deepl.useFreeApiEntry": true,
-    "i18n-ally.translate.engines": [
-        "deepl",
-        //"google"
-    ],
-
-    // -- PHP
-    "php.validate.enable": false,
-    "php.validate.executablePath": "F:\\Dateien\\Development\\php\\8.0.0",
-    "intelephense.completion.triggerParameterHints": true,
-    "intelephense.completion.insertUseDeclaration": true,
-    "intelephense.completion.fullyQualifyGlobalConstantsAndFunctions": true,
-    "intelephense.format.enable": true,
-    "intelephense.telemetry.enabled": false,
-    "intelephense.trace.server": "messages",
-    "intelephense.environment.phpVersion": "8.0.0",
-    "intelephense.files.exclude": [
-        "**/.git/**",
-        "**/.DS_Store/**",
-        "**/node_modules/**",
-        "**/vendor/**/{Test,test,Tests,tests}/**/*Test.php",
-        "**/storage/framework/views/**"
-    ],
-    "php-docblocker.returnGap": true,
-    "php-docblocker.qualifyClassNames": true
+  // ESLint
+  "eslint.codeAction.showDocumentation": {
+    "enable": true
+  },
+  "eslint.quiet": true,
+  "eslint.validate": [
+    "javascript",
+    "typescript",
+    "vue",
+    "html",
+    "markdown",
+    "json",
+    "jsonc",
+    "json5"
+  ],
 }
