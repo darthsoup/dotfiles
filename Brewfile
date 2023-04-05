@@ -10,72 +10,90 @@ tap 'homebrew/cask-fonts'
 brew 'z'
 brew 'zsh'
 
+brew 'bat'          # better cat
+brew 'tokei'        # better cloc
+brew 'exa'          # better ls
+brew 'htop'         # better top
+brew 'iftop'        # network top
+brew 'ctop'         # docker top
+brew 'tldr'         # nice helppages (human readable man pages)
+brew 'tmux'
+brew 'vim'
+brew 'wget'         # wget ¯\_(ツ)_/¯
+brew 'aria2'        # better weget
+brew 'rsync'
+brew 'fpp'
+brew 'watchexec'    # Run command on filechanges
+
+# development brew
+
 brew 'git'
-brew 'node@16'
+
+## Node
+
 brew 'node@18'
+brew 'node'
 brew 'yarn'
 brew 'pnpm'
 
-brew 'bat'
-brew 'cloc'
-brew 'exa'
-brew 'htop'
-brew 'iftop'
-brew 'tldr'
-brew 'tmux'
-brew 'vim'
-brew 'wget'
-brew 'fpp'
+## PHP
 
+brew 'brew-php-switcher'
 brew 'php'
 brew 'php@8.1'
-brew 'php@8.0'
 brew 'php@7.4'
 brew 'composer'
 
-
-
 # default apps
 
-cask 'cyberduck'
-cask 'keepassxc'
+cask 'alfred'
+cask 'audacity'
 cask 'bitwarden'
-cask 'spotify'
+cask 'coconutbattery'
+cask 'cyberduck'
+cask 'discord' # it also has development channels ;)
+cask 'figma'
 cask 'firefox'
 cask 'google-chrome'
-cask 'microsoft-teams'
 cask 'iterm2'
-cask 'royal-tsx'
-cask 'discord' # it also has development channels ;)
-cask 'synology-drive'
-cask 'coconutbattery'
-cask 'audacity'
-cask 'alfred'
+cask 'keepassxc'
+cask 'keka'
+cask 'microsoft-teams'
 cask 'numi'
+cask 'royal-tsx'
+cask 'spotify'
+cask 'synology-drive'
 cask 'vlc'
 
-# development apps
+# development casks
 
-cask 'insomnia'
 cask 'docker'
+cask 'figma'
+cask 'fork'
+cask 'insomnia'
 cask 'phpstorm'
-cask 'visual-studio-code'
 cask 'sublime-text'
 cask 'tableplus'
-cask 'fork'
+cask 'visual-studio-code'
 
 # others
 
 cask 'mactex'
 
 # cask fonts
+
+cask "font-cascadia-mono"
+cask "font-jetbrains-mono"
+cask 'font-hack'
 cask 'font-input'
+cask 'font-inter'
 cask 'font-lato'
 cask 'font-open-sans'
-cask 'font-hack'
-cask 'font-source-code-pro-for-powerline'
 cask 'font-source-code-pro'
+cask 'font-source-code-pro-for-powerline'
 cask 'font-source-sans-pro'
 cask 'font-source-serif-pro'
-cask "font-jetbrains-mono"
-cask "font-cascadia-mono"
+
+# appstore
+
+mas 'GoodNotes 5', id: 1444383602
