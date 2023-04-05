@@ -29,8 +29,10 @@ alias hosts="sudo $EDITOR /etc/hosts"
 alias onlineip="curl https://diagnostic.opendns.com/myip ; echo"
 
 # php
-alias composer7.4='php7.4 /usr/local/bin/composer'
-alias composer8.0='php8.0 /usr/local/bin/composer'
+alias php@7.4='$(brew --prefix php@7.4)/bin/php'
+alias php@8.1='$(brew --prefix php@8.1)/bin/php'
+alias composer@7.4='php@7.4 $(which composer)'
+alias composer@8.1='php@8.1 $(which composer)'
 alias phpunit="vendor/bin/phpunit"
 alias phpstan="vendor/bin/phpstan"
 alias cu="composer update"
@@ -38,7 +40,8 @@ alias cfresh="rm -rf vendor/ composer.lock && composer i"
 
 # php (laravel)
 alias artisan="php artisan"
-alias artisanfresh="artisan clear-compiled && artisan cache:clear && artisan route:clear && artisan config:clear && artisan view:clear && composer dumpautoload"
+alias artisan-fresh="artisan clear-compiled && artisan cache:clear && artisan route:clear && artisan config:clear && artisan view:clear && composer dumpautoload"
+alias tinker="php artisan tinker"
 
 # Docker
 alias d="docker"

@@ -24,6 +24,7 @@ brew 'aria2'        # better weget
 brew 'rsync'
 brew 'fpp'
 brew 'watchexec'    # Run command on filechanges
+brew 'zoxide'       # replace for cd just nicer
 
 # development brew
 
