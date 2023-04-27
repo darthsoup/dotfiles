@@ -32,8 +32,6 @@ brew 'git'
 
 ## Node
 
-brew 'node@18'
-brew 'node'
 brew 'yarn'
 brew 'pnpm'
 
