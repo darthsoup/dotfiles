@@ -12,7 +12,7 @@ brew 'zsh'
 
 brew 'bat'          # better cat
 brew 'tokei'        # better cloc
-brew 'exa'          # better ls
+brew 'eza'          # better ls
 brew 'htop'         # better top
 brew 'iftop'        # network top
 brew 'ctop'         # docker top
