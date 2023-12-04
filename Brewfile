@@ -4,6 +4,7 @@ tap 'homebrew/bundle'
 tap 'homebrew/cask'
 tap 'homebrew/core'
 tap 'homebrew/cask-fonts'
+tap 'shivammathur/php'
 
 # Stuff to install
 
@@ -39,6 +40,7 @@ brew 'pnpm'
 
 brew 'brew-php-switcher'
 brew 'php'
+brew 'php@8.0'
 brew 'php@8.1'
 brew 'php@8.2'
 brew 'composer'
