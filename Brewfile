@@ -40,7 +40,7 @@ brew 'pnpm'
 brew 'brew-php-switcher'
 brew 'php'
 brew 'php@8.1'
-brew 'php@7.4'
+brew 'php@8.2'
 brew 'composer'
 
 # default apps
@@ -69,7 +69,7 @@ cask 'vlc'
 cask 'docker'
 cask 'figma'
 cask 'fork'
-cask 'insomnia'
+cask 'bruno'
 cask 'phpstorm'
 cask 'sublime-text'
 cask 'tableplus'
@@ -95,4 +95,4 @@ cask 'font-source-serif-pro'
 
 # appstore
 
-mas 'GoodNotes 5', id: 1444383602
+mas 'GoodNotes 6', id: 1444383602
