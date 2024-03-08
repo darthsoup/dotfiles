@@ -3,15 +3,8 @@
 # load plugins via Znap
 source ~/zsh/plugins.zsh
 
-# Initialize completion
-autoload -Uz compinit
-for dump in ~/.zcompdump(N.mh+24); do
-	compinit
-done
-compinit -C
-
 # Load the shell dotfiles
-for file in ~/zsh/{config,exports,aliases,bindings}.zsh; do
+for file in ~/zsh/{config,bindings,aliases}.zsh; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 

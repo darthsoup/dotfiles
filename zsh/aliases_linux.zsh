@@ -2,7 +2,7 @@ changephp() {
     sudo update-alternatives --set php /usr/bin/php"$1"
 }
 
-#alias changephp="sudo update-alternatives --set php /usr/bin/php $1"
+# alias changephp="sudo update-alternatives --set php /usr/bin/php $1"
 
 alias apti="sudo apt install"
 alias aptr="sudo apt remove"
