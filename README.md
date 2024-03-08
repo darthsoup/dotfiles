@@ -14,12 +14,26 @@ cd dotfiles
 sh install
 ```
 
+### zsh
+
+To update Znap and all of your plugins/repos simultaneously, run
+
+```bash
+znap pull
+```
+
 ### vim
 
 Vim makes use of minpac for plugin management. At the first start-up call:
 
 ```vim
 :PacSetup
+```
+
+To update minpac and all of your plugins/repos simultaneously, run
+
+```vim
+:PacUpdate
 ```
 
 ### git
