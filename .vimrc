@@ -100,7 +100,7 @@ command! PacSetup		call InitMinpac() | call minpac#update('', { 'do': 'quit! | q
 command! PacStatus		call InitMinpac() | call minpac#status()
 command! PacPackages	call InitMinpac() | call minpac#getpackages()
 command! PacClean		call InitMinpac() | call minpac#clean()
-command! PacUpdate		call InitMinpac() | call minpac#update('', { 'do': 'call minpac#status() | quit! | quit!' })
+command! PacUpdate		call InitMinpac() | call minpac#update()
 
 " -----------------------
 " Plugin Settings
