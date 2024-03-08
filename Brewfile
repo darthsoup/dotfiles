@@ -11,20 +11,20 @@ tap 'shivammathur/php'
 brew 'z'
 brew 'zsh'
 
+brew 'aria2'        # better weget
 brew 'bat'          # better cat
-brew 'tokei'        # better cloc
+brew 'ctop'         # docker top
 brew 'eza'          # better ls
+brew 'fpp'
 brew 'htop'         # better top
 brew 'iftop'        # network top
-brew 'ctop'         # docker top
+brew 'rsync'
 brew 'tldr'         # nice helppages (human readable man pages)
 brew 'tmux'
+brew 'tokei'        # better cloc
 brew 'vim'
-brew 'wget'         # wget ¯\_(ツ)_/¯
-brew 'aria2'        # better weget
-brew 'rsync'
-brew 'fpp'
 brew 'watchexec'    # Run command on filechanges
+brew 'wget'         # wget ¯\_(ツ)_/¯
 brew 'zoxide'       # replace for cd just nicer
 
 # development brew
@@ -32,46 +32,49 @@ brew 'zoxide'       # replace for cd just nicer
 brew 'git'
 
 ## Node
-
-brew 'yarn'
+# brew 'node' using nvm now
 brew 'pnpm'
+brew 'yarn'
 
 ## PHP
 
 brew 'brew-php-switcher'
+brew 'composer'
 brew 'php'
 brew 'php@8.0'
 brew 'php@8.1'
 brew 'php@8.2'
-brew 'composer'
 
 # default apps
 
+cask 'aldente'
 cask 'alfred'
 cask 'audacity'
 cask 'bitwarden'
 cask 'coconutbattery'
 cask 'cyberduck'
-cask 'discord' # it also has development channels ;)
+cask 'discord'
 cask 'figma'
 cask 'firefox'
 cask 'google-chrome'
 cask 'iterm2'
 cask 'keepassxc'
 cask 'keka'
+cask 'maccy'
 cask 'microsoft-teams'
 cask 'numi'
 cask 'royal-tsx'
+cask 'slack'
 cask 'spotify'
 cask 'synology-drive'
 cask 'vlc'
 
 # development casks
 
+cask 'bruno'
 cask 'docker'
 cask 'figma'
 cask 'fork'
-cask 'bruno'
 cask 'phpstorm'
 cask 'sublime-text'
 cask 'tableplus'
@@ -83,18 +86,19 @@ cask 'mactex'
 
 # cask fonts
 
-cask "font-cascadia-mono"
-cask "font-jetbrains-mono"
 cask 'font-hack'
 cask 'font-input'
 cask 'font-inter'
 cask 'font-lato'
 cask 'font-open-sans'
-cask 'font-source-code-pro'
 cask 'font-source-code-pro-for-powerline'
+cask 'font-source-code-pro'
 cask 'font-source-sans-pro'
 cask 'font-source-serif-pro'
+cask 'font-cascadia-mono'
+cask 'font-jetbrains-mono'
 
 # appstore
 
+mas 'BetterSnapTool', id: 417375580
 mas 'GoodNotes 6', id: 1444383602
