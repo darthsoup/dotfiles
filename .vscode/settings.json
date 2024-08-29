@@ -1,32 +1,33 @@
 {
   // Visuals
   "workbench.colorTheme": "One Dark Pro",
-  "workbench.iconTheme": "vscode-icons",
-  "workbench.enableExperiments": false,
-  "workbench.startupEditor": "newUntitledFile",
   "workbench.editor.enablePreview": false,
+  "workbench.enableExperiments": false,
   "workbench.fontAliasing": "auto",
-  "workbench.tree.indent": 8,
+  "workbench.iconTheme": "vscode-icons",
   "workbench.list.smoothScrolling": true,
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.tree.indent": 8,
 
   // Editor
-  "editor.accessibilitySupport": "off",
   "editor.acceptSuggestionOnEnter": "smart",
+  "editor.accessibilitySupport": "off",
   "editor.autoIndent": "brackets",
-  "editor.guides.bracketPairs": "active",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never"
+  },
+  "editor.cursorBlinking": "blink",
   "editor.find.addExtraSpaceOnTop": false,
-  "editor.minimap.enabled": true,
   "editor.fontFamily": "Input Mono, Fira Code, monospace",
   "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss06', 'zero'",
-  "editor.cursorBlinking": "blink",
   "editor.formatOnPaste": true,
   "editor.formatOnSave": false,
+  "editor.guides.bracketPairs": "active",
+  "editor.hover.sticky": true,
+  "editor.minimap.enabled": true,
   "editor.renderWhitespace": "all",
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true,
-    "source.organizeImports": false
-  },
-  "editor.hover.sticky": false,
+  "editor.smoothScrolling": true,
 
   // Window
   "window.dialogStyle": "custom",
@@ -71,11 +72,14 @@
   "extensions.autoUpdate": false,
   "extensions.ignoreRecommendations": true,
 
-  // Volar
-  "volar.autoCompleteRefs": false,
-  "volar.completion.preferredTagNameCase": "pascal",
+  // git
+  "git.openRepositoryInParentFolders": "never",
 
-  // -- i18n ally
+  // Vue
+  "vue.autoInsert.dotValue": true,
+  "vue.format.script.initialIndent": true,
+
+  // i18n ally (removing later)
   "i18n-ally.displayLanguage": "de",
   "i18n-ally.sourceLanguage": "en",
   "i18n-ally.enabledFrameworks": [
@@ -90,6 +94,7 @@
   ],
 
   // ESLint
+  "eslint.codeActionsOnSave.rules": null,
   "eslint.codeAction.showDocumentation": {
     "enable": true
   },
