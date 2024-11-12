@@ -53,6 +53,7 @@ alias cfresh="rm -rf vendor/ composer.lock && composer i"
 alias artisan="php artisan"
 alias artisan-fresh="artisan clear-compiled && artisan cache:clear && artisan route:clear && artisan config:clear && artisan view:clear && composer dumpautoload"
 alias tinker="php artisan tinker"
+alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
 
 # Docker
 
