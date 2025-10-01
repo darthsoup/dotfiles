@@ -1,10 +1,6 @@
 # Taps
 
 tap 'buo/cask-upgrade'
-tap 'homebrew/bundle'
-tap 'homebrew/cask'
-tap 'homebrew/core'
-tap 'homebrew/cask-fonts'
 tap 'shivammathur/php'
 
 # Stuff to install
@@ -22,11 +18,10 @@ brew 'iftop'        # network top
 brew 'rsync'
 brew 'tldr'         # nice helppages (human readable man pages)
 brew 'tmux'
-brew 'tokei'        # better cloc
+brew 'tokei'        # count code data
 brew 'vim'
 brew 'watchexec'    # Run command on filechanges
 brew 'wget'         # wget ¯\_(ツ)_/¯
-brew 'zoxide'       # replace for cd just nicer
 
 # development brew
 
@@ -42,9 +37,8 @@ brew 'yarn'
 brew 'brew-php-switcher'
 brew 'composer'
 brew 'php'
-brew 'php@8.0'
-brew 'php@8.1'
 brew 'php@8.2'
+brew 'php@8.3'
 
 # default apps
 
@@ -56,7 +50,6 @@ cask 'bitwarden'
 cask 'coconutbattery'
 cask 'cyberduck'
 cask 'discord'
-cask 'figma'
 cask 'firefox'
 cask 'iterm2'
 cask 'keepassxc'

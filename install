@@ -10,10 +10,41 @@ ask_for_sudo() {
 	done &> /dev/null &
 }
 
+install_homebrew() {
+	if [[ ! "$(type -P brew)" ]]; then
+		echo ' ✔ install homebrew'
+		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+		echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> "$HOME/.bash_profile"
+		eval "$(/opt/homebrew/bin/brew shellenv)"
+	else
+		echo ' # skip homebrew (already installed)'
+	fi
+	[[ ! "$(type -P brew)" ]] && echo " # Homebrew installation failed" && exit 1
+}
+
+install_znap() {
+	if [[ ! -f ~/zsh/znap/znap.zsh ]]; then
+		echo ' ✔ install znap for zsh'
+		git clone --depth 1 https://github.com/marlonrichert/zsh-snap.git ~/zsh/znap
+	else
+		echo ' # skip znap (already installed)'
+	fi
+}
+
+install_minpac() {
+	if [[ ! -d ~/.vim/pack/minpac/opt/minpac ]]; then
+		echo ' ✔ install minpac for vim'
+		git clone --depth 1 https://github.com/k-takata/minpac.git ~/.vim/pack/minpac/opt/minpac
+	else
+		echo ' # skip minpac (already installed)'
+	fi
+}
+
 main() {
 	# install dotfiles
 
-	echo '--- install dotfiles ---'
+	echo '--- darthsoup dotfiles ---'
+	echo '--- install ---'
 
 	# ask for Sudo
 
@@ -21,6 +52,7 @@ main() {
 
 	# quick copy pasta to home
 
+	echo " ✔ Copy: Copying dotfiles to home..."
 	rsync -r \
 		--exclude '.git' \
 		--exclude '.editorconfig' \
@@ -28,41 +60,9 @@ main() {
 		--exclude 'README.md' \
 		--exclude 'install' ./ $HOME
 
-	# Install Homebrew
-
-	if [[ ! "$(type -P brew)" ]]; then
-		echo ' ✔ install homebrew'
-
-		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-		echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> $HOME/.bash_profile
-		eval "$(/opt/homebrew/bin/brew shellenv)"
-	fi
-
-	# Exit if, for some reason, Homebrew is not installed.
-
-	[[ ! "$(type -P brew)" ]] && e_error "Homebrew failed to install." && exit 1
-
-	# Download Znap, if it's not there yet.
-
-	if [[ ! -f ~/zsh/znap/znap.zsh ]]; then
-		echo ' ✔ install znap for zsh'
-
-		git clone --depth 1 -- \
-			https://github.com/marlonrichert/zsh-snap.git ~/zsh/znap
-	else
-		echo ' # skip znap (already installed)'
-	fi
-
-    # Fownload minpac for vim
-
-	if [[ ! -d ~/.vim/pack/minpac/opt/minpac ]]; then
-		echo ' ✔ install minpac for vim'
-
-		git clone --depth 1 -- \
-			https://github.com/k-takata/minpac.git ~/.vim/pack/minpac/opt/minpac
-	else
-		echo ' # skip minpac (already installed)'
-	fi
+	install_homebrew
+	install_znap
+	install_minpac
 
 	echo ' ✔ installation complete'
 	echo ' # restart the shell'
