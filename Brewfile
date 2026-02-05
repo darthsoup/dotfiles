@@ -2,6 +2,7 @@
 
 tap 'buo/cask-upgrade'
 tap 'shivammathur/php'
+tap 'shivammathur/extensions'
 
 # Stuff to install
 
@@ -28,7 +29,6 @@ brew 'wget'         # wget ¯\_(ツ)_/¯
 brew 'git'
 
 ## Node
-# brew 'node' using nvm now
 brew 'pnpm'
 brew 'yarn'
 
@@ -36,9 +36,10 @@ brew 'yarn'
 
 brew 'brew-php-switcher'
 brew 'composer'
-brew 'php'
-brew 'php@8.2'
-brew 'php@8.3'
+brew 'php@8.4'
+brew 'php@8.5'
+brew 'xdebug@8.4'
+brew 'xdebug@8.5'
 
 # default apps
 
