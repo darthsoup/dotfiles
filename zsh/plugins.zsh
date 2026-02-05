@@ -15,6 +15,6 @@ znap source mafredri/zsh-async
 # znap source ohmyzsh/ohmyzsh \
 #    'lib/(*~(git|theme-and-appearance).zsh)' plugins/git
 
-if [[ `uname` == "Darwin" ]]; then
+if [[ $(uname) == "Darwin" ]]; then
 	znap eval iterm2 'curl -fsSL https://iterm2.com/shell_integration/zsh'
 fi

@@ -9,6 +9,7 @@ export BROWSER="chrome"
 
 # add Paths
 
+export COMPOSER_HOME="$HOME/.composer"
 export PATH="$HOME/bin:$PATH";
 export PATH="$HOME/.composer/vendor/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$PATH"
@@ -30,12 +31,7 @@ zmodload zsh/complist
 _comp_options+=(globdots)
 
 autoload -Uz compinit
-for dump in ~/.zcompdump(N.mh+24); do
-	compinit
-done
 compinit -C
-
-
 
 # history
 
@@ -49,7 +45,6 @@ setopt EXTENDED_HISTORY
 setopt HIST_REDUCE_BLANKS
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
-setopt HIST_REDUCE_BLANKS
 setopt SHARE_HISTORY
 setopt COMPLETE_ALIASES
 
