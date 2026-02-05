@@ -16,6 +16,7 @@ brew 'eza'          # better ls
 brew 'fpp'
 brew 'htop'         # better top
 brew 'iftop'        # network top
+brew 'just'         # better make
 brew 'rsync'
 brew 'tldr'         # nice helppages (human readable man pages)
 brew 'tmux'
