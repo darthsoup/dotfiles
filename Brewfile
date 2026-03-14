@@ -9,38 +9,38 @@ tap 'shivammathur/extensions'
 brew 'z'
 brew 'zsh'
 
+# all the tops
+brew 'btop'         # better top
+brew 'ctop'         # docker top
+brew 'iftop'        # network top
+
 brew 'aria2'        # better weget
 brew 'bat'          # better cat
-brew 'ctop'         # docker top
 brew 'eza'          # better ls
 brew 'fpp'
-brew 'htop'         # better top
-brew 'iftop'        # network top
 brew 'just'         # better make
 brew 'rsync'
 brew 'tldr'         # nice helppages (human readable man pages)
 brew 'tmux'
-brew 'tokei'        # count code data
-brew 'vim'
+brew 'neovim'
 brew 'watchexec'    # Run command on filechanges
-brew 'wget'         # wget ¯\_(ツ)_/¯
+brew 'wget'         # wget
 
 # development brew
 
 brew 'git'
-
-## Node
 brew 'pnpm'
 brew 'yarn'
 
 ## PHP
-
 brew 'brew-php-switcher'
 brew 'composer'
 brew 'php@8.4'
 brew 'php@8.5'
 brew 'xdebug@8.4'
 brew 'xdebug@8.5'
+
+## Casks
 
 # default apps
 
@@ -56,7 +56,6 @@ cask 'firefox'
 cask 'iterm2'
 cask 'keepassxc'
 cask 'keka'
-cask 'microsoft-teams'
 cask 'numi'
 cask 'royal-tsx'
 cask 'slack'
@@ -77,9 +76,6 @@ cask 'phpstorm'
 cask 'sublime-text'
 cask 'tableplus'
 cask 'visual-studio-code'
-
-# others
-
 cask 'mactex'
 
 # cask fonts
