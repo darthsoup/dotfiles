@@ -18,7 +18,7 @@ alias ll="ls -alF"
 
 alias df='df -h' # disk free, in Gigabytes
 alias du='du -h -c' # calculate disk usage for a folder
-alias top="htop"
+alias top="btop"
 
 # config
 
