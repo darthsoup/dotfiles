@@ -35,8 +35,10 @@ brew 'yarn'
 ## PHP
 brew 'brew-php-switcher'
 brew 'composer'
+brew 'php@8.3'
 brew 'php@8.4'
 brew 'php@8.5'
+brew 'xdebug@8.3'
 brew 'xdebug@8.4'
 brew 'xdebug@8.5'
 
