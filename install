@@ -1,71 +1,181 @@
 #!/bin/bash
 
+set -euo pipefail
+
+DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# Colors
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+GREY='\033[0;90m'
+NC='\033[0m'
+
+info() { echo -e "${GREEN} ✔${NC} $1"; }
+warn() { echo -e "${YELLOW} !${NC} $1"; }
+skip() { echo -e "${GREY} #${NC} $1"; }
+
+# Flags
+INSTALL_BREW_BUNDLE=false
+for arg in "$@"; do
+	case $arg in
+		--brew) INSTALL_BREW_BUNDLE=true ;;
+	esac
+done
+
 ask_for_sudo() {
 	sudo -v
+	( while true; do sudo -n true; sleep 60; kill -0 "$$" 2>/dev/null || exit; done ) &
+	SUDO_PID=$!
+	trap "kill $SUDO_PID 2>/dev/null" EXIT
+}
 
-	while true; do
-		sudo -n true
-		sleep 60
-		kill -0 "$$" || exit
-	done &> /dev/null &
+link_dotfile() {
+	local name="$1"
+	local src="$DOTFILES_DIR/$name"
+	local dst="$HOME/$name"
+
+	# Already correctly linked — nothing to do
+	if [[ -L "$dst" && "$(readlink "$dst")" == "$src" ]]; then
+		skip "Already linked: ~/$name"
+		return
+	fi
+
+	# Back up existing non-symlink file/dir
+	if [[ -e "$dst" && ! -L "$dst" ]]; then
+		warn "Backing up existing ~/$name → ~/${name}.backup"
+		mv "$dst" "${dst}.backup"
+	fi
+
+	ln -sf "$src" "$dst"
+	info "Linked: ~/$name"
+}
+
+link_dotfiles() {
+	local dotfiles=(
+		.curlrc
+		.gitattributes
+		.gitconfig
+		.gitignore
+		.tmux.conf
+		.vimrc
+		.wgetrc
+		.zprofile
+		.zshrc
+		zsh
+	)
+	for f in "${dotfiles[@]}"; do
+		link_dotfile "$f"
+	done
+}
+
+link_vscode_config() {
+	mkdir -p "$HOME/.vscode/snippets"
+	local files=(settings.json extensions.json)
+	for f in "${files[@]}"; do
+		local src="$DOTFILES_DIR/vscode/$f"
+		local dst="$HOME/.vscode/$f"
+		if [[ -L "$dst" && "$(readlink "$dst")" == "$src" ]]; then
+			skip "Already linked: ~/.vscode/$f"
+		else
+			[[ -e "$dst" && ! -L "$dst" ]] && mv "$dst" "${dst}.backup" && warn "Backed up ~/.vscode/$f"
+			ln -sf "$src" "$dst"
+			info "Linked: ~/.vscode/$f"
+		fi
+	done
+	# Symlink snippets directory contents
+	for src in "$DOTFILES_DIR/vscode/snippets/"*; do
+		local fname="${src##*/}"
+		local dst="$HOME/.vscode/snippets/$fname"
+		if [[ -L "$dst" && "$(readlink "$dst")" == "$src" ]]; then
+			skip "Already linked: ~/.vscode/snippets/$fname"
+		else
+			[[ -e "$dst" && ! -L "$dst" ]] && mv "$dst" "${dst}.backup" && warn "Backed up snippet $fname"
+			ln -sf "$src" "$dst"
+			info "Linked: ~/.vscode/snippets/$fname"
+		fi
+	done
 }
 
 install_homebrew() {
-	if [[ ! "$(type -P brew)" ]]; then
-		echo ' ✔ install homebrew'
+	if ! command -v brew &>/dev/null; then
+		info "Installing Homebrew..."
 		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-		echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> "$HOME/.bash_profile"
-		eval "$(/opt/homebrew/bin/brew shellenv)"
+		# Support both Apple Silicon (/opt/homebrew) and Intel (/usr/local) paths
+		if [[ -x /opt/homebrew/bin/brew ]]; then
+			BREW_PREFIX=/opt/homebrew
+		else
+			BREW_PREFIX=/usr/local
+		fi
+		echo "eval \"\$($BREW_PREFIX/bin/brew shellenv)\"" >> "$HOME/.zprofile"
+		eval "$($BREW_PREFIX/bin/brew shellenv)"
 	else
-		echo ' # skip homebrew (already installed)'
+		skip "Homebrew already installed"
 	fi
-	[[ ! "$(type -P brew)" ]] && echo " # Homebrew installation failed" && exit 1
+	command -v brew &>/dev/null || { warn "Homebrew installation failed"; exit 1; }
+}
+
+install_brew_bundle() {
+	if [[ "$INSTALL_BREW_BUNDLE" == true ]]; then
+		info "Running brew bundle..."
+		brew bundle --file="$DOTFILES_DIR/Brewfile"
+	else
+		skip "Skipping Brewfile (re-run with --brew to install packages)"
+	fi
+}
+
+setup_gitconfig_local() {
+	if [[ ! -f "$HOME/.gitconfig.local" ]]; then
+		warn ".gitconfig.local not found — let's create it"
+		read -rp "  Git name:  " git_name
+		read -rp "  Git email: " git_email
+		cat > "$HOME/.gitconfig.local" <<-EOF
+			[user]
+				name = $git_name
+				email = $git_email
+		EOF
+		info "Created ~/.gitconfig.local"
+	else
+		skip ".gitconfig.local already exists"
+	fi
 }
 
 install_znap() {
-	if [[ ! -f ~/zsh/znap/znap.zsh ]]; then
-		echo ' ✔ install znap for zsh'
-		git clone --depth 1 https://github.com/marlonrichert/zsh-snap.git ~/zsh/znap
+	command -v git &>/dev/null || { warn "git is required but not installed"; exit 1; }
+	local znap_dir="$HOME/.local/share/zsh/znap"
+	if [[ ! -f "$znap_dir/znap.zsh" ]]; then
+		info "Installing Znap for zsh..."
+		git clone --depth 1 https://github.com/marlonrichert/zsh-snap.git "$znap_dir"
 	else
-		echo ' # skip znap (already installed)'
+		info "Updating Znap..."
+		zsh -c "source $znap_dir/znap.zsh && znap pull"
 	fi
 }
 
 install_minpac() {
+	command -v git &>/dev/null || { warn "git is required but not installed"; exit 1; }
 	if [[ ! -d ~/.vim/pack/minpac/opt/minpac ]]; then
-		echo ' ✔ install minpac for vim'
+		info "Installing minpac for vim..."
 		git clone --depth 1 https://github.com/k-takata/minpac.git ~/.vim/pack/minpac/opt/minpac
 	else
-		echo ' # skip minpac (already installed)'
+		skip "minpac already installed"
 	fi
 }
 
 main() {
-	# install dotfiles
-
 	echo '--- darthsoup dotfiles ---'
-	echo '--- install ---'
 
-	# ask for Sudo
+	ask_for_sudo
 
-	ask_for_sudo;
-
-	# quick copy pasta to home
-
-	echo " ✔ Copy: Copying dotfiles to home..."
-	rsync -r \
-		--exclude '.git' \
-		--exclude '.editorconfig' \
-		--exclude 'LICENSE.md' \
-		--exclude 'README.md' \
-		--exclude 'install' ./ $HOME
-
+	link_dotfiles
+	link_vscode_config
 	install_homebrew
+	install_brew_bundle
+	setup_gitconfig_local
 	install_znap
 	install_minpac
 
-	echo ' ✔ installation complete'
-	echo ' # restart the shell'
+	info "Installation complete — restart your shell or run: source ~/.zshrc"
 }
 
 main "$@"
+

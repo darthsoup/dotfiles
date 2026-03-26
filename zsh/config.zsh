@@ -3,14 +3,15 @@
 # base exports
 
 export DOTFILES="$HOME/.dotfiles"
-export EDITOR="vim"
+export EDITOR="nvim"
 export VEDITOR="code"
 export BROWSER="chrome"
 
 # add Paths
 
 export COMPOSER_HOME="$HOME/.composer"
-export PATH="$HOME/bin:$PATH";
+export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.composer/vendor/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$PATH"
 

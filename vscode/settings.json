@@ -1,6 +1,6 @@
 {
   // Visuals
-  "workbench.colorTheme": "One Dark Pro",
+  "workbench.colorTheme": "VS Code Dark",
   "workbench.editor.enablePreview": false,
   "workbench.enableExperiments": false,
   "workbench.fontAliasing": "auto",

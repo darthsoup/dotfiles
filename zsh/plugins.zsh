@@ -1,5 +1,8 @@
 
-source ~/zsh/znap/znap.zsh  # Start Znap
+# Store plugins outside the dotfiles repo
+zstyle ':znap:' repos-dir ~/.local/share/zsh/plugins
+
+source ~/.local/share/zsh/znap/znap.zsh  # Start Znap
 
 # themes
 znap prompt sindresorhus/pure

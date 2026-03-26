@@ -6,13 +6,23 @@ This setup is mainly intended for macOS, but should also work under Linux or Win
 
 ## Installation
 
-To install, simply clone the repo into your user directory and run the install script.
+Clone the repo into your home directory and run the install script.
 
 ```
-git clone git@github.com:darthsoup/dotfiles.git
-cd dotfiles
-sh install
+git clone git@github.com:darthsoup/dotfiles.git ~/dotfiles
+cd ~/dotfiles
+bash install
 ```
+
+Dotfiles are symlinked into `$HOME`, so any edits in the repo take effect immediately.
+
+To also install all packages and apps from the Brewfile, pass `--brew`:
+
+```
+bash install --brew
+```
+
+## Configuration
 
 ### zsh
 
@@ -38,7 +48,7 @@ To update minpac and all of your plugins/repos simultaneously, run
 
 ### git
 
-dont forget to add your `.gitconfig.local` file
+Don't forget to add your `.gitconfig.local` file
 
 ```ini
 [user]

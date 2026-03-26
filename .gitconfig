@@ -82,6 +82,9 @@
 [help]
     autocorrect = 0
 
+[fetch]
+    prune = true
+
 [merge]
     log = true
 
