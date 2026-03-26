@@ -10,6 +10,7 @@ brew 'z'
 brew 'zsh'
 
 # all the tops
+
 brew 'btop'         # better top
 brew 'ctop'         # docker top
 brew 'iftop'        # network top
@@ -20,7 +21,7 @@ brew 'eza'          # better ls
 brew 'fpp'
 brew 'just'         # better make
 brew 'rsync'
-brew 'tldr'         # nice helppages (human readable man pages)
+brew 'tlrc'         # nice helppages (human readable man pages)
 brew 'tmux'
 brew 'neovim'
 brew 'watchexec'    # Run command on filechanges
@@ -65,7 +66,7 @@ cask 'spotify'
 cask 'synology-drive'
 cask 'teamspeak-client'
 cask 'vlc'
-cask 'yubico-yubikey-manager'
+cask 'yubico-authenticator'
 
 # development casks
 
@@ -79,6 +80,9 @@ cask 'sublime-text'
 cask 'tableplus'
 cask 'visual-studio-code'
 cask 'mactex'
+
+cask 'claude-code'
+cask 'copilot-cli'
 
 # cask fonts
 
