@@ -16,9 +16,11 @@ skip() { echo -e "${GREY} #${NC} $1"; }
 
 # Flags
 INSTALL_BREW_BUNDLE=false
+EDITOR_CHOICE=neovim
 for arg in "$@"; do
 	case $arg in
 		--brew) INSTALL_BREW_BUNDLE=true ;;
+		--vim)  EDITOR_CHOICE=vim ;;
 	esac
 done
 
@@ -57,7 +59,6 @@ link_dotfiles() {
 		.gitconfig
 		.gitignore
 		.tmux.conf
-		.vimrc
 		.wgetrc
 		.zprofile
 		.zshrc
@@ -66,6 +67,22 @@ link_dotfiles() {
 	for f in "${dotfiles[@]}"; do
 		link_dotfile "$f"
 	done
+	if [[ "$EDITOR_CHOICE" == "vim" ]]; then
+		link_dotfile ".vimrc"
+	fi
+}
+
+link_neovim_config() {
+	local src="$DOTFILES_DIR/nvim"
+	local dst="$HOME/.config/nvim"
+	mkdir -p "$HOME/.config"
+	if [[ -L "$dst" && "$(readlink "$dst")" == "$src" ]]; then
+		skip "Already linked: ~/.config/nvim"
+		return
+	fi
+	[[ -e "$dst" && ! -L "$dst" ]] && warn "Backing up existing ~/.config/nvim → ~/.config/nvim.backup" && mv "$dst" "${dst}.backup"
+	ln -sf "$src" "$dst"
+	info "Linked: ~/.config/nvim"
 }
 
 link_vscode_config() {
@@ -161,6 +178,17 @@ install_minpac() {
 	fi
 }
 
+install_lazy_nvim() {
+	command -v git &>/dev/null || { warn "git is required but not installed"; exit 1; }
+	local lazy_dir="$HOME/.local/share/nvim/lazy/lazy.nvim"
+	if [[ ! -d "$lazy_dir" ]]; then
+		info "Installing lazy.nvim..."
+		git clone --filter=blob:none https://github.com/folke/lazy.nvim.git --branch=stable "$lazy_dir"
+	else
+		skip "lazy.nvim already installed"
+	fi
+}
+
 main() {
 	echo '--- darthsoup dotfiles ---'
 
@@ -172,7 +200,15 @@ main() {
 	install_brew_bundle
 	setup_gitconfig_local
 	install_znap
-	install_minpac
+
+	if [[ "$EDITOR_CHOICE" == "neovim" ]]; then
+		info "Editor: Neovim (use --vim to switch to vim)"
+		link_neovim_config
+		install_lazy_nvim
+	else
+		info "Editor: Vim (neovim is the default)"
+		install_minpac
+	fi
 
 	info "Installation complete — restart your shell or run: source ~/.zshrc"
 }

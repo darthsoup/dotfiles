@@ -98,14 +98,15 @@ cask "copilot-cli"             # GitHub Copilot in the terminal
 # ─── Fonts ────────────────────────────────────────────────────────────────────
 
 cask "font-cascadia-mono"      # Microsoft monospace font
+cask "font-hack-nerd-font"     # Hack patched with Nerd Fonts glyphs
 cask "font-hack"               # Monospace font designed for source code
 cask "font-input"              # Customizable coding font family
 cask "font-inter"              # UI font for screens
 cask "font-jetbrains-mono"     # Monospace font by JetBrains
 cask "font-lato"               # Humanist sans-serif
 cask "font-open-sans"          # Humanist sans-serif by Google
-cask "font-source-code-pro"            # Monospace font by Adobe
 cask "font-source-code-pro-for-powerline" # Source Code Pro with Powerline glyphs
+cask "font-source-code-pro"            # Monospace font by Adobe
 cask "font-source-sans-pro"    # Sans-serif font by Adobe
 cask "font-source-serif-pro"   # Serif font by Adobe
 
