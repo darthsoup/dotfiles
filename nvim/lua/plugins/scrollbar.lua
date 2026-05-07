@@ -1,8 +1,8 @@
 return {
-  'petertriho/nvim-scrollbar',
-  opts = {
-    handlers = {
-      cursor = false,
-    },
-  },
+	'petertriho/nvim-scrollbar',
+	opts = {
+		handlers = {
+			cursor = false,
+		},
+	},
 }

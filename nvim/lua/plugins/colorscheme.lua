@@ -1,8 +1,8 @@
 return {
 	"navarasu/onedark.nvim",
-	lazy     = false,
+	lazy = false,
 	priority = 1000,
-	config   = function()
+	config = function()
 		require("onedark").setup({ style = "dark" })
 		require("onedark").load()
 	end,
