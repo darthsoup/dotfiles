@@ -3,6 +3,7 @@
 
 # zsh - safety net in case anything ends up in the zsh dir (plugins live in ~/.local/share/zsh/)
 zsh/*/
+*.zwc
 
 # vscode - runtime data written by VS Code (not in repo; config lives in vscode/)
 .vscode/
