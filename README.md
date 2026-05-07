@@ -32,18 +32,14 @@ To update Znap and all of your plugins/repos simultaneously, run
 znap pull
 ```
 
-### vim
+### neovim
 
-Vim makes use of minpac for plugin management. At the first start-up call:
+Neovim uses [lazy.nvim](https://lazy.folke.io) for plugin management. Plugins are installed automatically on the first launch.
 
-```vim
-:PacSetup
-```
-
-To update minpac and all of your plugins/repos simultaneously, run
+To update all plugins, run inside Neovim:
 
 ```vim
-:PacUpdate
+:Lazy update
 ```
 
 ### git

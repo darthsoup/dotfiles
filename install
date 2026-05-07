@@ -16,11 +16,9 @@ skip() { echo -e "${GREY} #${NC} $1"; }
 
 # Flags
 INSTALL_BREW_BUNDLE=false
-EDITOR_CHOICE=neovim
 for arg in "$@"; do
 	case $arg in
 		--brew) INSTALL_BREW_BUNDLE=true ;;
-		--vim)  EDITOR_CHOICE=vim ;;
 	esac
 done
 
@@ -67,9 +65,6 @@ link_dotfiles() {
 	for f in "${dotfiles[@]}"; do
 		link_dotfile "$f"
 	done
-	if [[ "$EDITOR_CHOICE" == "vim" ]]; then
-		link_dotfile ".vimrc"
-	fi
 }
 
 link_neovim_config() {
@@ -168,16 +163,6 @@ install_znap() {
 	fi
 }
 
-install_minpac() {
-	command -v git &>/dev/null || { warn "git is required but not installed"; exit 1; }
-	if [[ ! -d ~/.vim/pack/minpac/opt/minpac ]]; then
-		info "Installing minpac for vim..."
-		git clone --depth 1 https://github.com/k-takata/minpac.git ~/.vim/pack/minpac/opt/minpac
-	else
-		skip "minpac already installed"
-	fi
-}
-
 install_lazy_nvim() {
 	command -v git &>/dev/null || { warn "git is required but not installed"; exit 1; }
 	local lazy_dir="$HOME/.local/share/nvim/lazy/lazy.nvim"
@@ -200,15 +185,8 @@ main() {
 	install_brew_bundle
 	setup_gitconfig_local
 	install_znap
-
-	if [[ "$EDITOR_CHOICE" == "neovim" ]]; then
-		info "Editor: Neovim (use --vim to switch to vim)"
-		link_neovim_config
-		install_lazy_nvim
-	else
-		info "Editor: Vim (neovim is the default)"
-		install_minpac
-	fi
+	link_neovim_config
+	install_lazy_nvim
 
 	info "Installation complete — restart your shell or run: source ~/.zshrc"
 }
