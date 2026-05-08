@@ -31,6 +31,8 @@ brew "iftop"                   # Network bandwidth monitor
 
 # ─── Development ──────────────────────────────────────────────────────────────
 
+## Node
+brew "fnm"                     # Fast Node version manager (written in Rust, better than nvm)
 brew "pnpm"                    # Fast, disk-efficient Node package manager
 brew "yarn"                    # (crappy and old)Node package manager
 

@@ -1,23 +1,19 @@
-
 # Store plugins outside the dotfiles repo
 zstyle ':znap:' repos-dir ~/.local/share/zsh/plugins
 
 source ~/.local/share/zsh/znap/znap.zsh  # Start Znap
 
-# themes
+# prompt
 znap prompt sindresorhus/pure
 
 # general stuff
-# znap source marlonrichert/zsh-autocomplete # currently testing
 znap source zsh-users/zsh-autosuggestions
-znap source zsh-users/zsh-syntax-highlighting
+znap source zdharma-continuum/fast-syntax-highlighting
 znap source rupa/z
 znap source mafredri/zsh-async
-# znap source molovo/tipz
-
-# znap source ohmyzsh/ohmyzsh \
-#    'lib/(*~(git|theme-and-appearance).zsh)' plugins/git
 
 if [[ $(uname) == "Darwin" ]]; then
 	znap eval iterm2 'curl -fsSL https://iterm2.com/shell_integration/zsh'
 fi
+
+eval "$(fnm env --use-on-cd --shell zsh)"
