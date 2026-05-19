@@ -1,6 +1,6 @@
 {
   // Visuals
-  "workbench.colorTheme": "VS Code Dark",
+  "workbench.colorTheme": "Dark 2026",
   "workbench.editor.enablePreview": false,
   "workbench.enableExperiments": false,
   "workbench.fontAliasing": "auto",
@@ -109,4 +109,9 @@
     "jsonc",
     "json5"
   ],
+
+  // AI
+  "github.copilot.chat.localeOverride": "en",
+  "chat.mcp.gallery.enabled": true,
+  "chat.useClaudeHooks": true,
 }
