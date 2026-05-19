@@ -8,6 +8,7 @@ tap "anomalyco/tap"            # opencode
 # ─── CLI ──────────────────────────────────────────────────────────────────────
 
 brew "zsh"                     # Z shell
+brew "starship"                # Cross-shell prompt for my zsh configuration
 brew "git"                     # Version control
 brew "wget"                    # File downloader
 brew "rsync"                   # File sync / transfer

@@ -15,3 +15,4 @@ zstyle ':completion:*' insert-tab pending
 zstyle ':completion:*' rehash true
 zstyle ':completion:*' menu select=2
 
+eval "$(starship init zsh)"

@@ -3,9 +3,6 @@ zstyle ':znap:' repos-dir ~/.local/share/zsh/plugins
 
 source ~/.local/share/zsh/znap/znap.zsh  # Start Znap
 
-# prompt
-znap prompt sindresorhus/pure
-
 # general stuff
 znap source zsh-users/zsh-autosuggestions
 znap source zdharma-continuum/fast-syntax-highlighting
