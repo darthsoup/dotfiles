@@ -15,4 +15,8 @@ zstyle ':completion:*' insert-tab pending
 zstyle ':completion:*' rehash true
 zstyle ':completion:*' menu select=2
 
+# shell prompt
 eval "$(starship init zsh)"
+
+# php version manager (https://github.com/darthsoup/pvm)
+eval "$(pvm init)"
