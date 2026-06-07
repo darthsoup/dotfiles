@@ -108,6 +108,23 @@ link_vscode_config() {
 	done
 }
 
+link_claude_config() {
+	if ! command -v claude &>/dev/null; then
+		skip "Claude Code not installed — skipping ~/.claude/settings.json"
+		return
+	fi
+	local src="$DOTFILES_DIR/claude/settings.json"
+	local dst="$HOME/.claude/settings.json"
+	mkdir -p "$HOME/.claude"
+	if [[ -L "$dst" && "$(readlink "$dst")" == "$src" ]]; then
+		skip "Already linked: ~/.claude/settings.json"
+		return
+	fi
+	[[ -e "$dst" && ! -L "$dst" ]] && warn "Backing up existing ~/.claude/settings.json → ~/.claude/settings.json.backup" && mv "$dst" "${dst}.backup"
+	ln -sf "$src" "$dst"
+	info "Linked: ~/.claude/settings.json"
+}
+
 install_homebrew() {
 	if ! command -v brew &>/dev/null; then
 		info "Installing Homebrew..."
@@ -181,6 +198,7 @@ main() {
 
 	link_dotfiles
 	link_vscode_config
+	link_claude_config
 	install_homebrew
 	install_brew_bundle
 	setup_gitconfig_local

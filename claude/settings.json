@@ -1,0 +1,38 @@
+{
+  "attribution" : {
+    "commit" : " "
+  },
+  "effortLevel" : "high",
+  "enabledPlugins" : {
+    "claude-code-setup@claude-plugins-official" : true,
+    "context7@claude-plugins-official" : true,
+    "stitch-build@google-labs-code-stitch-skills" : true,
+    "stitch-design@google-labs-code-stitch-skills" : true,
+    "stitch-utilities@google-labs-code-stitch-skills" : true
+  },
+  "includeGitInstructions" : false,
+  "outputStyle" : "Concise",
+  "permissions" : {
+    "allow" : [
+      "Read",
+      "Grep",
+      "Glob",
+      "Bash(npm test:*)",
+      "Bash(git status)",
+      "Bash(git diff:*)",
+      "Bash(ls:*)"
+    ],
+    "defaultMode" : "plan",
+    "deny" : [
+      "Bash(rm -rf:*)",
+      "Read(.\/.env)",
+      "Read(.\/.env.*)",
+      "Read(.\/secrets\/**)"
+    ]
+  },
+  "sandbox" : {
+    "filesystem" : {
+
+    }
+  }
+}

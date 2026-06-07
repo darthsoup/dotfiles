@@ -52,6 +52,10 @@ Don't forget to add your `.gitconfig.local` file
 	email = 'your@email.com'
 ```
 
+### Claude Code
+
+Global [Claude Code](https://claude.ai/code) settings live in `claude/settings.json` and are symlinked to `~/.claude/settings.json`. Edits in the repo take effect immediately. Per-machine overrides belong in `~/.claude/settings.local.json`, which is intentionally not tracked.
+
 ## License
 
 See the bundled [LICENSE](https://github.com/darthsoup/dotfiles/blob/master/LICENSE.md) file for details.
