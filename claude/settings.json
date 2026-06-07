@@ -1,6 +1,7 @@
 {
   "attribution" : {
-    "commit" : " "
+    "commit" : "",
+    "pr" : ""
   },
   "effortLevel" : "high",
   "enabledPlugins" : {
@@ -27,6 +28,7 @@
       "Bash(rm -rf:*)",
       "Read(.\/.env)",
       "Read(.\/.env.*)",
+      "Read(!.env.example)",
       "Read(.\/secrets\/**)"
     ]
   },
