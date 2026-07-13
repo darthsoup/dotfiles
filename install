@@ -110,19 +110,23 @@ link_vscode_config() {
 
 link_claude_config() {
 	if ! command -v claude &>/dev/null; then
-		skip "Claude Code not installed — skipping ~/.claude/settings.json"
+		skip "Claude Code not installed — skipping ~/.claude config"
 		return
 	fi
-	local src="$DOTFILES_DIR/claude/settings.json"
-	local dst="$HOME/.claude/settings.json"
 	mkdir -p "$HOME/.claude"
-	if [[ -L "$dst" && "$(readlink "$dst")" == "$src" ]]; then
-		skip "Already linked: ~/.claude/settings.json"
-		return
-	fi
-	[[ -e "$dst" && ! -L "$dst" ]] && warn "Backing up existing ~/.claude/settings.json → ~/.claude/settings.json.backup" && mv "$dst" "${dst}.backup"
-	ln -sf "$src" "$dst"
-	info "Linked: ~/.claude/settings.json"
+	local f src dst
+	for f in settings.json statusline.sh commands skills; do
+		src="$DOTFILES_DIR/claude/$f"
+		dst="$HOME/.claude/$f"
+		[[ -e "$src" ]] || continue
+		if [[ -L "$dst" && "$(readlink "$dst")" == "$src" ]]; then
+			skip "Already linked: ~/.claude/$f"
+			continue
+		fi
+		[[ -e "$dst" && ! -L "$dst" ]] && warn "Backing up existing ~/.claude/$f → ~/.claude/$f.backup" && mv "$dst" "${dst}.backup"
+		ln -sfn "$src" "$dst"
+		info "Linked: ~/.claude/$f"
+	done
 }
 
 install_homebrew() {

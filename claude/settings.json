@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
   "attribution" : {
     "commit" : "",
     "pr" : ""
@@ -15,26 +16,54 @@
   "outputStyle" : "Concise",
   "permissions" : {
     "allow" : [
-      "Read",
-      "Grep",
-      "Glob",
+      "Read(*)",
+      "Write(*)",
+      "Edit(*)",
+      "Glob(*)",
+      "Grep(*)",
+      "WebSearch",
+      "WebSearch(*)",
+      "Skill(context7-auto-research:*)",
+      "mcp__chrome-devtools__*",
+      "mcp__context7__*",
       "Bash(npm test:*)",
       "Bash(git status)",
       "Bash(git diff:*)",
-      "Bash(ls:*)"
+      "Bash(vendor/bin/phpunit:*)",
+      "Bash(vendor/bin/pest:*)",
+      "Bash(composer:*)",
+      "Bash(php artisan:*)",
+      "Bash(make:*)",
+      "Bash(just:*)",
+      "Bash(pnpm:*)",
+      "Bash(touch:*)",
+      "Bash(cat:*)",
+      "Bash(pwd:*)",
+      "Bash(ls:*)",
+      "Bash(tail:*)",
+      "Bash(diff:*)"
     ],
-    "defaultMode" : "plan",
     "deny" : [
       "Bash(rm -rf:*)",
+      "Bash(git reset --hard origin/*)*",
+      "Bash(git clean -f*)*",
+      "Bash(npm publish)*",
+      "Bash(pnpm publish)*",
+      "Bash(yarn publish)*",
+      "Bash(docker system prune)*",
       "Read(.\/.env)",
       "Read(.\/.env.*)",
       "Read(!.env.example)",
       "Read(.\/secrets\/**)"
-    ]
+    ],
+
+    "defaultMode" : "plan"
   },
   "sandbox" : {
-    "filesystem" : {
-
-    }
+    "filesystem" : {}
+  },
+  "statusLine" : {
+    "type" : "command",
+    "command" : "~/.claude/statusline.sh"
   }
 }

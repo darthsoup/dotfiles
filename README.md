@@ -56,6 +56,10 @@ Don't forget to add your `.gitconfig.local` file
 
 Global [Claude Code](https://claude.ai/code) settings live in `claude/settings.json` and are symlinked to `~/.claude/settings.json`. Edits in the repo take effect immediately. Per-machine overrides belong in `~/.claude/settings.local.json`, which is intentionally not tracked.
 
+The `statusLine` in `claude/settings.json` points at `claude/statusline.sh` (also symlinked into `~/.claude/`). It renders a single line showing the model name, a context usage progress bar, git status, rate limit usage, and session duration. The script reads Claude Code's JSON payload on stdin and requires `jq` and `git` (both installed via the Brewfile).
+
+Custom slash commands (`claude/commands/`) and skills (`claude/skills/`) are symlinked as whole directories into `~/.claude/commands` and `~/.claude/skills`, so anything added under them in the repo is picked up on the next launch.
+
 ## License
 
 See the bundled [LICENSE](https://github.com/darthsoup/dotfiles/blob/master/LICENSE.md) file for details.
