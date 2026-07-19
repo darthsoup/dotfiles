@@ -115,7 +115,7 @@ link_claude_config() {
 	fi
 	mkdir -p "$HOME/.claude"
 	local f src dst
-	for f in settings.json statusline.sh commands skills; do
+	for f in settings.json statusline.sh commands skills CLAUDE.md; do
 		src="$DOTFILES_DIR/claude/$f"
 		dst="$HOME/.claude/$f"
 		[[ -e "$src" ]] || continue

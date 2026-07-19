@@ -27,7 +27,7 @@ The install script backs up any existing non-symlink file/directory to `<name>.b
 | `.tmux.conf`, `.curlrc`, `.wgetrc` | `~/` | Tool configs |
 | `nvim/` | `~/.config/nvim` | Neovim config |
 | `vscode/settings.json`, `vscode/extensions.json`, `vscode/snippets/` | `~/.vscode/` | VS Code config |
-| `claude/settings.json`, `claude/statusline.sh`, `claude/commands/`, `claude/skills/` | `~/.claude/` | Claude Code global settings, status line, custom slash commands and skills |
+| `claude/settings.json`, `claude/statusline.sh`, `claude/commands/`, `claude/skills/`, `claude/CLAUDE.md` | `~/.claude/` | Claude Code global settings, status line, custom slash commands, skills, and global instructions |
 | `starship/starship.toml` | manual | Starship prompt |
 
 ## Key Conventions
