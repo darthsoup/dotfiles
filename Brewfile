@@ -15,6 +15,7 @@ brew "rsync"                   # File sync / transfer
 brew "tmux"                    # Terminal multiplexer
 brew "neovim"                  # Modern Vim fork
 brew "watchexec"               # Re-run commands on file changes
+brew "jq"                      # json processor
 
 # Better defaults
 brew "aria2"                   # Multi-protocol download utility (better wget)
@@ -31,6 +32,8 @@ brew "ctop"                    # Container resource monitor
 brew "iftop"                   # Network bandwidth monitor
 
 # ─── Development ──────────────────────────────────────────────────────────────
+
+brew "gh"                      # github cli
 
 ## Node
 brew "fnm"                     # Fast Node version manager (written in Rust, better than nvm)
@@ -82,7 +85,7 @@ cask "yubico-authenticator"    # YubiKey OTP & FIDO management
 # ─── Development Apps ─────────────────────────────────────────────────────────
 
 cask "bruno"                   # API client (offline, open-source Postman alternative)
-cask "docker"                  # Container platform
+cask "docker-desktop"          # Docker
 cask "figma"                   # Collaborative UI design tool
 cask "fork"                    # Git GUI client
 cask "heynote"                 # Persistent scratchpad for developers
