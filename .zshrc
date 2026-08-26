@@ -19,4 +19,4 @@ zstyle ':completion:*' menu select=2
 eval "$(starship init zsh)"
 
 # php version manager (https://github.com/darthsoup/pvm)
-eval "$(pvm init)"
+(( $+commands[pvm] )) && eval "$(pvm init)"
