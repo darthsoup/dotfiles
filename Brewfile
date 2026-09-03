@@ -92,7 +92,7 @@ cask "heynote"                 # Persistent scratchpad for developers
 cask "mactex"                  # LaTeX distribution for macOS
 cask "phpstorm"                # PHP IDE
 cask "sublime-text"            # Lightweight text editor
-cask "tableplus"               # Database GUI (MySQL, Postgres, SQLite, …)
+cask "tablepro"                # Database GUI (MySQL, Postgres, SQLite, …)
 cask "visual-studio-code"      # Code editor
 
 # ─── AI ───────────────────────────────────────────────────────────────────────
